@@ -64,6 +64,30 @@ python3 -m http.server 8000
 Qualquer servidor estático serve. Abrir o `index.html` direto pelo `file://`
 não funciona: os caminhos de `assets/` são absolutos.
 
+## Rolagem
+
+Duas regras, porque o site é uma leitura longa com animação amarrada ao scroll:
+
+- **Nenhuma seção passa de 2 telas.** O hero e o Vocabulário vinham do canvas
+  com 3 e 2,4 telas — juntos, 54% da página. Eram 7 gestos de trackpad até a
+  segunda dobra; hoje são 4. A coreografia do hero é normalizada pelo
+  progresso da seção (`p` de 0 a 1), então encurtar a seção acelera a
+  sequência sem quebrá-la.
+- **Sem `scroll-snap`.** O canvas tinha `scroll-snap-stop: always` em quatro
+  seções, o que proíbe passar de um ponto de snap num gesto só — é o que
+  travava a mão. Snap e animação de scrub também brigam: o snap anima a
+  posição, que redirige o scrub.
+
+As três animações (hero, scrub, slide-in) compartilham **um** listener de
+scroll coalescido por frame. Cada uma tinha o seu, registrado em quatro alvos
+— 11 listeners rodando sincronamente a cada evento de roda, dois deles lendo
+`--vb-nav` com `getComputedStyle`, que força recálculo de estilo. Medido em
+Chromium, rolagem contínua de 170 frames: p95 de 19,5ms para 17,0ms
+(orçamento de frame: 16,7ms), frames perdidos de 4–7 para 2–3.
+
+`[id]{scroll-margin-top:var(--vb-nav)}` é o que faz um link de âncora parar
+abaixo da nav sticky em vez de entregar a seção por baixo dela.
+
 ## Acessibilidade e performance
 
 `prefers-reduced-motion: reduce` desliga todas as animações de scroll — a

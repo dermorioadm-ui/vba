@@ -162,6 +162,9 @@ const head = `<meta charset="utf-8">
 ${helmet}
 <style>
   html{scroll-behavior:smooth}
+  /* A nav é sticky: sem isso um link de âncora entrega a seção por baixo dela.
+     O canvas só declarava em algumas seções — #atuacao e #metodo ficavam de fora. */
+  [id]{scroll-margin-top:var(--vb-nav,80px)}
   .vb-menu[hidden]{display:none}
   @media (max-width:${MOBILE_MAX}px){.vb-desk{display:none}}
   @media (min-width:${DESKTOP_MIN}px){.vb-mob{display:none}}
