@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#111315;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  a{color:#B79E77;text-decoration:none}
+  a:hover{color:#E9EAE8}
+  ::selection{background:#8A7454;color:#111315}
+</style>
+</helmet>
+
+
+
+<div style="--ac: {{ accent }};--act: {{ accentText }};background:#111315;min-height:100vh;padding-bottom:1px">
+
+  <!-- 00 CAPA -->
+  <section data-screen-label="Capa" style="max-width:1200px;margin:0 auto;padding:clamp(44px,7vw,104px) clamp(20px,5vw,64px) clamp(40px,6vw,80px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;padding-bottom:clamp(60px,10vw,140px)">
+      <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#98A0A6">Manual de identidade visual</div>
+      <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">v1.0 — 2026</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:clamp(20px,3vw,34px)">
+      <div style="width:clamp(64px,9vw,104px);aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+      <div style="display:flex;flex-direction:column;gap:clamp(10px,1.4vw,16px)">
+        <h1 style="margin:0;font:600 clamp(30px,6.4vw,74px)/.98 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#E9EAE8">Victor&nbsp;Boechat</h1>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:clamp(36px,6vw,72px);height:1px;background:var(--ac,#8A7454)"></div>
+          <div style="font:500 clamp(10px,1.3vw,13px)/1 'IBM Plex Mono',monospace;letter-spacing:.42em;text-transform:uppercase;color:#98A0A6">Advogados</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="max-width:34ch;margin:clamp(44px,6vw,72px) 0 0;font:300 clamp(17px,2.2vw,24px)/1.45 Spectral,serif;color:#C9CDD0">Direito tributário para empresas e direito militar para quem serve.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:1px;margin-top:clamp(48px,7vw,88px);background:#2A2E32;border:1px solid #2A2E32">
+      <div style="flex:1 1 200px;min-width:0;background:#1C1F22;padding:20px 22px;display:flex;flex-direction:column;gap:8px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Inscrição</div><div style="font:400 14px/1.3 'IBM Plex Mono',monospace;color:#C9CDD0">OAB/RJ 206.210</div></div>
+      <div style="flex:1 1 200px;min-width:0;background:#1C1F22;padding:20px 22px;display:flex;flex-direction:column;gap:8px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Pós-graduação</div><div style="font:400 14px/1.3 'IBM Plex Mono',monospace;color:#C9CDD0">Direito Tributário — FGV</div></div>
+      <div style="flex:1 1 240px;min-width:0;background:#1C1F22;padding:20px 22px;display:flex;flex-direction:column;gap:8px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Especialidades</div><div style="font:400 14px/1.3 'IBM Plex Mono',monospace;color:#C9CDD0">Militar · Previdenciário</div></div>
+    </div>
+  </section>
+
+  <!-- 01 MARCA -->
+  <section data-screen-label="Marca" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">01</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">A marca</h2>
+      </div>
+      <p style="max-width:56ch;margin:0 0 clamp(36px,5vw,64px);font:300 clamp(15px,1.6vw,18px)/1.65 Spectral,serif;color:#C9CDD0">Um bloco de concreto com um único corte a 45° no canto superior direito, e as iniciais <em style="font-style:italic;color:#E9EAE8">VB</em> vazadas no vão. O chanfro é a assinatura — a letra só ocupa o espaço que sobra. Geometria fechada, sem ornamento, sem alegoria.</p>
+
+      <!-- construção -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:22px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Construção</div>
+          <div style="position:relative;width:100%;max-width:220px;aspect-ratio:1">
+            <div style="width:100%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <sc-if value="{{ showConstruction }}" hint-placeholder-val="{{ true }}">
+              <svg viewBox="0 0 120 120" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
+                <g stroke="#8A7454" stroke-width="0.6" opacity="0.75" fill="none">
+                  <path d="M0 0V120M20 0V120M40 0V120M60 0V120M80 0V120M100 0V120M120 0V120"></path>
+                  <path d="M0 0H120M0 20H120M0 40H120M0 60H120M0 80H120M0 100H120M0 120H120"></path>
+                </g>
+                <g stroke="#B79E77" stroke-width="0.9" opacity="0.9" fill="none"><path d="M86.4 0L120 33.6"></path><path d="M86.4 0V33.6H120"></path><path d="M0 33.6H86.4"></path></g>
+              </svg>
+            </sc-if>
+          </div>
+          <div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">Grade 6×6. Corte a 45° saindo<br>de 72% do topo. Letra em 40% do bloco.</div>
+        </div>
+
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:22px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Área de respiro</div>
+          <div style="position:relative;width:100%;max-width:220px;aspect-ratio:1;border:1px dashed #5E656B;padding:16.6%">
+            <div style="width:100%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+          </div>
+          <div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">Margem mínima = 1/5 da<br>largura da marca em todos os lados.</div>
+        </div>
+
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:22px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Tamanho mínimo</div>
+          <div style="display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="width:48px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><span style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">48</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="width:32px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><span style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">32</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div style="width:20px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><span style="font:400 10px/1 'IBM Plex Mono',monospace;color:var(--act,#B79E77)">20 mín.</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:10px;opacity:.4"><div style="width:14px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><span style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">14</span></div>
+          </div>
+          <div style="font:400 12px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">Abaixo de 20 px a letra fecha.<br>Use o bloco vazio nesse caso.</div>
+        </div>
+      </div>
+
+      <!-- lockups -->
+      <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B;margin:clamp(40px,5vw,64px) 0 18px">Assinaturas</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="background:#1C1F22;padding:clamp(30px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:250px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <div style="width:56px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font:600 clamp(17px,2vw,22px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div>
+              <div style="display:flex;align-items:center;gap:10px"><div style="width:24px;height:1px;background:var(--ac,#8A7454)"></div><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.36em;text-transform:uppercase;color:#98A0A6">Advogados</div></div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B">Vertical — principal</div>
+        </div>
+
+        <div style="background:#1C1F22;padding:clamp(30px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:250px">
+          <div style="display:flex;align-items:center;gap:18px">
+            <div style="width:44px;aspect-ratio:1;flex:none;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <div style="width:1px;height:44px;background:#2A2E32;flex:none"></div>
+            <div style="display:flex;flex-direction:column;gap:7px;min-width:0">
+              <div style="font:600 clamp(14px,1.6vw,17px)/1 Archivo,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div>
+              <div style="font:500 9px/1 'IBM Plex Mono',monospace;letter-spacing:.34em;text-transform:uppercase;color:#98A0A6">Advogados</div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B">Horizontal — espaços estreitos</div>
+        </div>
+
+        <div style="background:#E9EAE8;padding:clamp(30px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:250px">
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <div style="width:56px;aspect-ratio:1;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="font:600 clamp(17px,2vw,22px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#111315">Victor Boechat</div>
+              <div style="display:flex;align-items:center;gap:10px"><div style="width:24px;height:1px;background:#8A7454"></div><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.36em;text-transform:uppercase;color:#5E656B">Advogados</div></div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B">Positiva sobre cal</div>
+        </div>
+
+        <div style="background:#1C1F22;padding:clamp(30px,4vw,48px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:250px">
+          <div style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+            <div style="width:56px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <div style="width:56px;aspect-ratio:1;background:var(--ac,#8A7454);clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+            <div style="width:56px;height:56px;background:#E9EAE8;display:flex;align-items:center;justify-content:center"><div style="width:38px;aspect-ratio:1;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div></div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B">Símbolo isolado — avatar, selo, favicon</div>
+        </div>
+      </div>
+
+      <!-- usos proibidos -->
+      <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B;margin:clamp(40px,5vw,64px) 0 18px">Usos proibidos</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="background:#1C1F22;padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px"><div style="width:56px;aspect-ratio:1;transform:scaleX(1.5);background:#5E656B;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div><div style="font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5E656B;text-align:center">Não distorcer</div></div>
+        <div style="background:#1C1F22;padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px"><div style="width:56px;aspect-ratio:1;transform:rotate(14deg);background:#5E656B;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div><div style="font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5E656B;text-align:center">Não girar</div></div>
+        <div style="background:#1C1F22;padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px"><div style="width:56px;aspect-ratio:1;background:#2F6FE0;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div><div style="font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5E656B;text-align:center">Não recolorir</div></div>
+        <div style="background:#1C1F22;padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px"><div style="width:56px;aspect-ratio:1;filter:drop-shadow(4px 6px 5px rgba(0,0,0,.9));background:#5E656B;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div><div style="font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5E656B;text-align:center">Sem sombra</div></div>
+        <div style="background:#1C1F22;padding:26px;display:flex;flex-direction:column;align-items:center;gap:20px"><div style="width:56px;aspect-ratio:1;background:#5E656B;clip-path:polygon(0 0,100% 0,100% 100%,28% 100%,0 72%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><div style="font:400 10px/1.4 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#5E656B;text-align:center">Não inverter o corte</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COR -->
+  <section data-screen-label="Cor" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">02</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Cor</h2>
+      </div>
+      <p style="max-width:56ch;margin:0 0 clamp(36px,5vw,64px);font:300 clamp(15px,1.6vw,18px)/1.65 Spectral,serif;color:#C9CDD0">Cimento frio do início ao fim: uma família neutra de baixa temperatura, sem azul aparente e sem calor. O bronze fosco entra em dose mínima — fio, borda, hot&#8209;stamping — e nunca preenche área.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="display:flex;flex-direction:column"><div style="background:#111315;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Grafite 900</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#111315</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Fundo primário</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#1C1F22;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cimento 800</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#1C1F22</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Painéis, cartelas</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#2A2E32;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cimento 700</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#2A2E32</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Fios, divisões</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#5E656B;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cimento 500</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#5E656B</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Só decorativo</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#98A0A6;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cimento 300</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#98A0A6</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Rótulos, apoio</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#C9CDD0;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cimento 150</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#C9CDD0</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Texto sobre grafite</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#E9EAE8;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Cal 050</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#E9EAE8</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Papel, versão clara</div></div></div>
+        <div style="display:flex;flex-direction:column"><div style="background:#8A7454;height:132px;border-bottom:1px solid #2A2E32"></div><div style="background:#1C1F22;padding:18px 20px;display:flex;flex-direction:column;gap:7px"><div style="font:600 13px/1.2 Archivo,sans-serif;letter-spacing:.04em;color:#E9EAE8">Bronze Fosco</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">#8A7454</div><div style="font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5E656B">Fio e relevo — máx. 5%</div></div></div>
+      </div>
+
+      <div style="margin-top:clamp(28px,4vw,44px)">
+        <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B;margin-bottom:14px">Proporção de uso</div>
+        <div style="display:flex;height:14px;width:100%;border:1px solid #2A2E32">
+          <div style="flex:60 1 0;background:#111315"></div><div style="flex:18 1 0;background:#1C1F22"></div><div style="flex:9 1 0;background:#C9CDD0"></div><div style="flex:8 1 0;background:#98A0A6"></div><div style="flex:5 1 0;background:#E9EAE8"></div><div style="flex:2 1 0;background:#8A7454"></div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;font:400 11px/1 'IBM Plex Mono',monospace;color:#5E656B"><span>60% Grafite</span><span>18% Cimento 800</span><span>17% Neutros claros</span><span>3% Cal</span><span>2% Bronze</span></div>
+      </div>
+
+      <div style="display:flex;gap:1px;flex-wrap:wrap;margin-top:clamp(28px,4vw,44px);background:#2A2E32;border:1px solid #2A2E32">
+        <div style="flex:1 1 260px;background:#1C1F22;padding:22px;font:300 15px/1.6 Spectral,serif;color:#C9CDD0">Texto corrido sobre grafite usa <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#E9EAE8">#C9CDD0</span> — contraste 11:1.</div>
+        <div style="flex:1 1 260px;background:#1C1F22;padding:22px;font:300 15px/1.6 Spectral,serif;color:#C9CDD0">Bronze em texto só na variante clara <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B79E77">#B79E77</span>. O fosco é para tinta e relevo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 TIPOGRAFIA -->
+  <section data-screen-label="Tipografia" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">03</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Tipografia</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="background:#1C1F22;padding:clamp(26px,3.4vw,42px);display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Títulos e marca</div><div style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">400 · 500 · 600</div></div>
+          <div style="font:600 clamp(34px,5vw,56px)/1 Archivo,sans-serif;letter-spacing:-.02em;color:#E9EAE8">Archivo</div>
+          <div style="font:400 clamp(15px,1.7vw,19px)/1.4 Archivo,sans-serif;color:#98A0A6">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789</div>
+          <div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Grotesca de esqueleto reto e caixa fechada. Sustenta a assinatura em versal com entreletra aberta.</div>
+        </div>
+        <div style="background:#1C1F22;padding:clamp(26px,3.4vw,42px);display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Texto e peças</div><div style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">300 · 400 · itálico</div></div>
+          <div style="font:400 clamp(34px,5vw,56px)/1 Spectral,serif;color:#E9EAE8">Spectral</div>
+          <div style="font:400 clamp(15px,1.7vw,19px)/1.4 Spectral,serif;color:#98A0A6">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789</div>
+          <div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Serifa de leitura para petições, contratos e textos longos. Legível em corpo 11 pt impresso.</div>
+        </div>
+        <div style="background:#1C1F22;padding:clamp(26px,3.4vw,42px);display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Dados e rótulos</div><div style="font:400 10px/1 'IBM Plex Mono',monospace;color:#5E656B">400 · 500</div></div>
+          <div style="font:500 clamp(26px,3.6vw,40px)/1 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:#E9EAE8">Plex Mono</div>
+          <div style="font:400 clamp(13px,1.5vw,16px)/1.4 'IBM Plex Mono',monospace;color:#98A0A6">OAB/RJ 206.210<br>0000000-00.2026.8.19.0001</div>
+          <div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Números de processo, inscrição, datas e etiquetas. Sempre em versal com entreletra de .2em.</div>
+        </div>
+      </div>
+
+      <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B;margin:clamp(36px,4.6vw,60px) 0 18px">Escala</div>
+      <div style="border:1px solid #2A2E32">
+        <div style="display:flex;align-items:baseline;gap:clamp(14px,2.5vw,32px);padding:20px clamp(18px,2.4vw,30px);border-bottom:1px solid #2A2E32;flex-wrap:wrap"><div style="width:104px;flex:none;font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Display</div><div style="font:600 clamp(28px,4.4vw,48px)/1 Archivo,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div></div>
+        <div style="display:flex;align-items:baseline;gap:clamp(14px,2.5vw,32px);padding:20px clamp(18px,2.4vw,30px);border-bottom:1px solid #2A2E32;flex-wrap:wrap"><div style="width:104px;flex:none;font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Título</div><div style="font:600 clamp(20px,2.8vw,30px)/1.1 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Recuperação tributária</div></div>
+        <div style="display:flex;align-items:baseline;gap:clamp(14px,2.5vw,32px);padding:20px clamp(18px,2.4vw,30px);border-bottom:1px solid #2A2E32;flex-wrap:wrap"><div style="width:104px;flex:none;font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Corpo</div><div style="font:300 17px/1.6 Spectral,serif;color:#C9CDD0;max-width:50ch">Imposto indevido não se corrige sozinho no contracheque.</div></div>
+        <div style="display:flex;align-items:baseline;gap:clamp(14px,2.5vw,32px);padding:20px clamp(18px,2.4vw,30px);flex-wrap:wrap"><div style="width:104px;flex:none;font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Etiqueta</div><div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#98A0A6">Direito Tributário</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ELEMENTOS -->
+  <section data-screen-label="Elementos" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">04</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Elementos gráficos</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="background:#1C1F22;padding:clamp(26px,3.2vw,38px);display:flex;flex-direction:column;gap:24px;min-height:230px">
+          <div style="display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center"><div style="height:1px;background:#2A2E32"></div><div style="height:1px;background:#2A2E32"></div><div style="height:1px;background:var(--ac,#8A7454)"></div><div style="height:1px;background:#2A2E32"></div><div style="height:1px;background:#2A2E32"></div></div>
+          <div><div style="font:600 13px/1.3 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8;margin-bottom:6px">Estrato</div><div style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">Fio de 1 px separa tudo. Um único fio bronze por peça.</div></div>
+        </div>
+        <div style="background:#1C1F22;padding:clamp(26px,3.2vw,38px);display:flex;flex-direction:column;gap:24px;min-height:230px">
+          <div style="flex:1;display:flex;align-items:center;justify-content:center"><div style="width:100%;max-width:142px;aspect-ratio:1;background:#2A2E32;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%)"></div></div>
+          <div><div style="font:600 13px/1.3 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8;margin-bottom:6px">Chanfro</div><div style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">O mesmo corte da marca vira corte de caixa e de foto. Sempre no canto superior direito.</div></div>
+        </div>
+        <div style="background:#1C1F22;padding:clamp(26px,3.2vw,38px);display:flex;flex-direction:column;gap:24px;min-height:230px">
+          <div style="flex:1;display:flex;align-items:center;justify-content:center"><div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;width:100%;max-width:170px"><div style="height:52px;background:#2A2E32"></div><div style="height:52px;background:#2A2E32"></div><div style="height:52px;background:#2A2E32"></div><div style="height:52px;background:#2A2E32"></div><div style="height:52px;background:#2A2E32"></div><div style="height:52px;background:#2A2E32"></div></div></div>
+          <div><div style="font:600 13px/1.3 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8;margin-bottom:6px">Grade</div><div style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">12 colunas, margem larga. Texto nunca passa de 60 caracteres.</div></div>
+        </div>
+        <div style="background:#1C1F22;padding:clamp(26px,3.2vw,38px);display:flex;flex-direction:column;gap:24px;min-height:230px">
+          <div style="flex:1;display:flex;align-items:center;justify-content:center"><div style="border:1px solid var(--ac,#8A7454);padding:10px 16px;font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.28em;text-transform:uppercase;color:#C9CDD0">OAB/RJ 206.210</div></div>
+          <div><div style="font:600 13px/1.3 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8;margin-bottom:6px">Etiqueta de registro</div><div style="font:400 11px/1.6 'IBM Plex Mono',monospace;color:#98A0A6">Inscrição sempre em caixa fina, nunca dentro da assinatura.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CARTÃO -->
+  <section data-screen-label="Cartao" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">05</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Cartão de visita</h2>
+      </div>
+      <p style="max-width:52ch;margin:0 0 clamp(30px,4vw,52px);font:300 clamp(15px,1.6vw,18px)/1.65 Spectral,serif;color:#C9CDD0">85 × 50 mm, papel de algodão 600 g, corte reto. Frente em grafite com marca em relevo seco; verso em cal com dados em bronze fosco.</p>
+
+      <div style="display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap">
+        <div style="flex:1 1 300px;max-width:430px;min-width:0">
+          <div style="aspect-ratio:85/50;background:#111315;border:1px solid #2A2E32;padding:9%;display:flex;flex-direction:column;justify-content:space-between">
+            <sc-if value="{{ appsVertical }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;align-items:flex-start;gap:7%">
+                <div style="width:16%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+                <div style="display:flex;flex-direction:column;gap:5px"><div style="font:600 clamp(11px,2.5vw,15px)/1 Archivo,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div><div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:1px;background:var(--ac,#8A7454)"></div><div style="font:500 clamp(6px,1.3vw,8px)/1 'IBM Plex Mono',monospace;letter-spacing:.34em;text-transform:uppercase;color:#98A0A6">Advogados</div></div></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ appsHorizontal }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:14px">
+                <div style="width:13%;aspect-ratio:1;flex:none;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+                <div style="display:flex;flex-direction:column;gap:5px"><div style="font:600 clamp(11px,2.2vw,14px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div><div style="font:500 clamp(6px,1.2vw,8px)/1 'IBM Plex Mono',monospace;letter-spacing:.32em;text-transform:uppercase;color:#98A0A6">Advogados</div></div>
+              </div>
+            </sc-if>
+            <div style="font:400 clamp(6px,1.3vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">Rio de Janeiro · RJ</div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:14px">Frente — relevo seco sobre grafite</div>
+        </div>
+
+        <div style="flex:1 1 300px;max-width:430px;min-width:0">
+          <div style="aspect-ratio:85/50;background:#E9EAE8;border:1px solid #C9CDD0;padding:9%;display:flex;flex-direction:column;justify-content:space-between">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="font:600 clamp(10px,2vw,13px)/1.2 Archivo,sans-serif;letter-spacing:.05em;color:#111315">Victor Boechat</div>
+                <div style="font:400 clamp(6px,1.3vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#5E656B">Advogado · OAB/RJ 206.210</div>
+              </div>
+              <div style="width:11%;aspect-ratio:1;flex:none;background:#8A7454;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+            </div>
+            <div style="height:1px;background:#C9CDD0"></div>
+            <div style="display:flex;flex-direction:column;gap:4px;font:400 clamp(6.5px,1.35vw,9.5px)/1.6 'IBM Plex Mono',monospace;color:#111315">
+              <div>+55 21 99823-4902</div>
+              <div>vboechat@live.com</div>
+              <div style="color:#5E656B">victorboechat.adv.br</div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:14px">Verso — cal, dados em bronze</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 PETIÇÃO -->
+  <section data-screen-label="Peticao" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">06</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Capa e modelo de petição</h2>
+      </div>
+      <p style="max-width:52ch;margin:0 0 clamp(30px,4vw,52px);font:300 clamp(15px,1.6vw,18px)/1.65 Spectral,serif;color:#C9CDD0">A4, margens de 3 cm, corpo em Spectral 11 pt com entrelinha de 1,5. A marca aparece uma vez por documento; o resto é fio e etiqueta.</p>
+
+      <div style="display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap;align-items:flex-start">
+        <div style="flex:1 1 260px;max-width:360px;min-width:0">
+          <div style="aspect-ratio:210/297;background:#E9EAE8;border:1px solid #C9CDD0;padding:11% 10%;display:flex;flex-direction:column">
+            <div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+              <div style="width:13%;aspect-ratio:1;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+              <div style="font:600 clamp(9px,1.8vw,12px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#111315">Victor Boechat</div>
+              <div style="font:500 clamp(5.5px,1.1vw,7.5px)/1 'IBM Plex Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#5E656B">Advogados</div>
+            </div>
+            <div style="height:1px;background:#8A7454;margin:12% 0 auto"></div>
+            <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:auto">
+              <div style="font:400 clamp(5.5px,1.1vw,7.5px)/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">Juízo</div>
+              <div style="font:400 clamp(8px,1.6vw,11px)/1.4 Spectral,serif;color:#111315">Vara Federal da Seção Judiciária do Rio de Janeiro</div>
+              <div style="height:1px;background:#C9CDD0;margin:6px 0"></div>
+              <div style="font:400 clamp(5.5px,1.1vw,7.5px)/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">Ação</div>
+              <div style="font:500 clamp(10px,2vw,14px)/1.25 Archivo,sans-serif;letter-spacing:.02em;color:#111315">Repetição de indébito tributário</div>
+              <div style="height:1px;background:#C9CDD0;margin:6px 0"></div>
+              <div style="font:400 clamp(5.5px,1.1vw,7.5px)/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">Partes</div>
+              <div style="font:400 clamp(8px,1.6vw,11px)/1.5 Spectral,serif;color:#111315">Requerente · Nome do cliente<br>Requerido · União Federal</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:10px;font:400 clamp(5px,1vw,7px)/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#5E656B"><span>OAB/RJ 206.210</span><span>2026</span></div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:14px">Capa</div>
+        </div>
+
+        <div style="flex:1 1 260px;max-width:360px;min-width:0">
+          <div style="aspect-ratio:210/297;background:#E9EAE8;border:1px solid #C9CDD0;padding:9% 10%;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:9px;padding-bottom:5%">
+              <div style="width:8%;aspect-ratio:1;flex:none;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+              <div style="font:600 clamp(6.5px,1.3vw,9px)/1 Archivo,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#111315">Victor Boechat</div>
+              <div style="flex:1;height:1px;background:#C9CDD0"></div>
+              <div style="font:400 clamp(5px,1vw,7px)/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:#5E656B">02/14</div>
+            </div>
+            <div style="font:500 clamp(7px,1.4vw,10px)/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#6E5B3F;margin-bottom:4%">I — Dos fatos</div>
+            <div style="display:flex;flex-direction:column;gap:5.5%;flex:1">
+              <div style="display:flex;flex-direction:column;gap:22%"><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:96%"></div><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:64%"></div></div>
+              <div style="border-left:1px solid #8A7454;padding-left:7%;display:flex;flex-direction:column;gap:30%"><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:92%"></div><div style="height:1px;background:#98A0A6;width:78%"></div></div>
+              <div style="display:flex;flex-direction:column;gap:22%"><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:98%"></div><div style="height:1px;background:#98A0A6;width:100%"></div><div style="height:1px;background:#98A0A6;width:44%"></div></div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;font:400 clamp(5px,1vw,7px)/1 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#5E656B;padding-top:5%">victorboechat.adv.br</div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:14px">Folha de continuação</div>
+        </div>
+
+        <div style="flex:1 1 200px;min-width:0;border:1px solid #2A2E32;padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:18px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Regras da peça</div>
+          <div style="display:flex;flex-direction:column;gap:14px;font:300 14px/1.55 Spectral,serif;color:#C9CDD0">
+            <div>Títulos de seção em Plex Mono versal, bronze, numeração romana.</div>
+            <div style="height:1px;background:#2A2E32"></div>
+            <div>Citação recuada com fio bronze à esquerda, corpo 10 pt.</div>
+            <div style="height:1px;background:#2A2E32"></div>
+            <div>Rodapé só com domínio. Endereço e telefone apenas na última folha.</div>
+            <div style="height:1px;background:#2A2E32"></div>
+            <div>Nenhuma cor além de grafite, cinza e bronze.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 REDES -->
+  <section data-screen-label="Redes" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">07</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Redes e anúncios</h2>
+      </div>
+      <p style="max-width:52ch;margin:0 0 clamp(30px,4vw,52px);font:300 clamp(15px,1.6vw,18px)/1.65 Spectral,serif;color:#C9CDD0">Três formatos, um só ritmo: etiqueta em cima, uma afirmação no meio, assinatura embaixo. Nunca mais de uma ideia por peça.</p>
+
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,36px)">
+        <div style="width:76px;height:76px;border-radius:50%;background:#111315;border:1px solid #2A2E32;display:flex;align-items:center;justify-content:center;flex:none"><div style="width:38px;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><div style="font:600 15px/1 Archivo,sans-serif;letter-spacing:.02em;color:#E9EAE8">victorboechat.adv</div><div style="font:400 12px/1.5 'IBM Plex Mono',monospace;color:#98A0A6">Avatar — símbolo isolado, 1/2 do diâmetro</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(14px,2vw,24px)">
+        <div>
+          <div style="aspect-ratio:1;background:#111315;border:1px solid #2A2E32;padding:11%;display:flex;flex-direction:column;justify-content:space-between">
+            <div style="font:500 clamp(7px,1.5vw,10px)/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--act,#B79E77)">Direito Militar</div>
+            <div style="font:300 clamp(16px,3.4vw,25px)/1.28 Spectral,serif;color:#E9EAE8">Verba indenizatória não é renda — e o contracheque nem sempre respeita isso.</div>
+            <div style="display:flex;align-items:center;gap:9px"><div style="width:16px;aspect-ratio:1;flex:none;background:#98A0A6;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div><div style="font:500 clamp(6px,1.2vw,8px)/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#98A0A6">Victor Boechat Advogados</div></div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Feed — afirmação</div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:1;background:#E9EAE8;border:1px solid #C9CDD0;padding:11%;display:flex;flex-direction:column;justify-content:space-between">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+              <div style="font:500 clamp(7px,1.5vw,10px)/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#5E656B">Tributário</div>
+              <div style="width:13%;aspect-ratio:1;flex:none;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:9%">
+              <div style="height:1px;background:#8A7454;width:34%"></div>
+              <div style="font:600 clamp(15px,3.2vw,24px)/1.1 Archivo,sans-serif;letter-spacing:-.01em;color:#111315">Recuperação de indébito</div>
+              <div style="font:300 clamp(9px,1.9vw,13px)/1.5 Spectral,serif;color:#5E656B">Cinco anos de recolhimento indevido ainda são reversíveis.</div>
+            </div>
+            <div style="font:400 clamp(6px,1.2vw,8px)/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#5E656B">victorboechat.adv.br</div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Feed — área de atuação</div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:1;background:#1C1F22;border:1px solid #2A2E32;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8%;padding:11%">
+            <div style="width:26%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:9px">
+              <div style="font:600 clamp(11px,2.3vw,17px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E9EAE8;text-align:center">Victor Boechat</div>
+              <div style="width:26px;height:1px;background:var(--ac,#8A7454)"></div>
+              <div style="font:500 clamp(6px,1.2vw,8px)/1 'IBM Plex Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#98A0A6">Advogados</div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Feed — institucional</div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:9/16;background:#111315;border:1px solid #2A2E32;padding:9% 9% 11%;display:flex;flex-direction:column;justify-content:space-between;max-height:none">
+            <div style="display:flex;flex-direction:column;gap:12%">
+              <div style="width:15%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+              <div style="font:500 clamp(6.5px,1.4vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--act,#B79E77)">Para empresas</div>
+            </div>
+            <div style="font:300 clamp(15px,3.2vw,23px)/1.3 Spectral,serif;color:#E9EAE8">Revisão do passivo tributário e recuperação de créditos da sua empresa.</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="height:1px;background:#2A2E32"></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div style="font:500 clamp(6px,1.3vw,9px)/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#E9EAE8">Falar com o escritório</div><div style="font:400 clamp(6px,1.3vw,9px)/1 'IBM Plex Mono',monospace;color:var(--act,#B79E77)">→</div></div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Story / anúncio — 9:16</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 APRESENTAÇÃO -->
+  <section data-screen-label="Apresentacao" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">08</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Apresentação institucional</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(14px,2vw,24px)">
+        <div>
+          <div style="aspect-ratio:16/9;background:#111315;border:1px solid #2A2E32;padding:7%;display:flex;flex-direction:column;justify-content:space-between">
+            <div style="width:8%;aspect-ratio:1;background:#E9EAE8;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#111315;margin-right:.05em">VB</div></div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font:600 clamp(15px,2.8vw,26px)/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#E9EAE8">Victor Boechat</div>
+              <div style="display:flex;align-items:center;gap:10px"><div style="width:24px;height:1px;background:var(--ac,#8A7454)"></div><div style="font:500 clamp(6px,1.1vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.32em;text-transform:uppercase;color:#98A0A6">Advogados</div></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:10px;font:400 clamp(6px,1.1vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#5E656B"><span>Apresentação institucional</span><span>2026</span></div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Capa</div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:16/9;background:#1C1F22;border:1px solid #2A2E32;padding:7%;display:flex;flex-direction:column;gap:5%">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><div style="font:500 clamp(6px,1.1vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:var(--act,#B79E77)">Atuação</div><div style="font:400 clamp(6px,1.1vw,9px)/1 'IBM Plex Mono',monospace;color:#5E656B">03</div></div>
+            <div style="font:600 clamp(13px,2.2vw,20px)/1.15 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8;max-width:22ch">Três frentes, um mesmo método</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2A2E32;flex:1;margin-top:auto">
+              <div style="background:#1C1F22;padding:8% 7%;display:flex;flex-direction:column;justify-content:space-between;gap:8px"><div style="font:500 clamp(8px,1.5vw,12px)/1.2 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8">Tributário</div><div style="font:300 clamp(7px,1.2vw,10px)/1.45 Spectral,serif;color:#98A0A6">Indébito, planejamento e recuperação de créditos.</div></div>
+              <div style="background:#1C1F22;padding:8% 7%;display:flex;flex-direction:column;justify-content:space-between;gap:8px"><div style="font:500 clamp(8px,1.5vw,12px)/1.2 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8">Militar</div><div style="font:300 clamp(7px,1.2vw,10px)/1.45 Spectral,serif;color:#98A0A6">Verbas, promoções, reforma e pensão.</div></div>
+              <div style="background:#1C1F22;padding:8% 7%;display:flex;flex-direction:column;justify-content:space-between;gap:8px"><div style="font:500 clamp(8px,1.5vw,12px)/1.2 Archivo,sans-serif;letter-spacing:.03em;color:#E9EAE8">Previdenciário</div><div style="font:300 clamp(7px,1.2vw,10px)/1.45 Spectral,serif;color:#98A0A6">Revisão de benefício e regime próprio.</div></div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Conteúdo — três colunas</div>
+        </div>
+
+        <div>
+          <div style="aspect-ratio:16/9;background:#E9EAE8;border:1px solid #C9CDD0;padding:7%;display:flex;flex-direction:column;justify-content:space-between">
+            <div style="font:500 clamp(6px,1.1vw,9px)/1 'IBM Plex Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#5E656B">Contato</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="height:1px;background:#8A7454;width:16%"></div>
+              <div style="font:300 clamp(13px,2.4vw,22px)/1.25 Spectral,serif;color:#111315;max-width:26ch">Tributo recolhido a mais só volta para quem vai buscar.</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px">
+              <div style="display:flex;flex-direction:column;gap:4px;font:400 clamp(6px,1.15vw,9px)/1.6 'IBM Plex Mono',monospace;color:#111315"><span>vboechat@live.com</span><span style="color:#5E656B">+55 21 99823-4902 · OAB/RJ 206.210</span></div>
+              <div style="width:7%;aspect-ratio:1;flex:none;background:#111315;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div>
+            </div>
+          </div>
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#5E656B;margin-top:12px">Fechamento</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 VOZ -->
+  <section data-screen-label="Voz" style="border-top:1px solid #2A2E32">
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,64px) clamp(64px,9vw,120px)">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)">
+        <div style="font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--act,#B79E77)">09</div>
+        <h2 style="margin:0;font:600 clamp(22px,3.4vw,36px)/1.05 Archivo,sans-serif;letter-spacing:-.01em;color:#E9EAE8">Voz e tom</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#2A2E32;border:1px solid #2A2E32;margin-bottom:clamp(24px,3vw,40px)">
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:12px"><div style="font:600 15px/1.2 Archivo,sans-serif;letter-spacing:.02em;color:#E9EAE8">Afirma, não promete</div><div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Nenhum superlativo, nenhuma garantia de resultado. Frase curta, verbo no presente.</div></div>
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:12px"><div style="font:600 15px/1.2 Archivo,sans-serif;letter-spacing:.02em;color:#E9EAE8">Explica sem simplificar</div><div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Termo técnico entra quando é o termo certo — e vem acompanhado do que significa na prática.</div></div>
+        <div style="background:#1C1F22;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:12px"><div style="font:600 15px/1.2 Archivo,sans-serif;letter-spacing:.02em;color:#E9EAE8">Uma ideia por peça</div><div style="font:300 14px/1.6 Spectral,serif;color:#98A0A6">Se a peça fala de tributário, não menciona militar. Foco é o que diferencia.</div></div>
+      </div>
+      <div style="display:flex;gap:1px;flex-wrap:wrap;background:#2A2E32;border:1px solid #2A2E32">
+        <div style="flex:1 1 280px;background:#1C1F22;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#B79E77">Escreve assim</div>
+          <div style="font:300 16px/1.55 Spectral,serif;color:#C9CDD0">“Revisão do passivo tributário e recuperação de créditos da sua empresa.”</div>
+          <div style="height:1px;background:#2A2E32"></div>
+          <div style="font:300 16px/1.55 Spectral,serif;color:#C9CDD0">“Cinco anos de recolhimento indevido ainda são reversíveis.”</div>
+        </div>
+        <div style="flex:1 1 280px;background:#1C1F22;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:500 10px/1 'IBM Plex Mono',monospace;letter-spacing:.22em;text-transform:uppercase;color:#5E656B">Nunca assim</div>
+          <div style="font:300 16px/1.55 Spectral,serif;color:#5E656B">“Excelência e compromisso com a melhor solução jurídica para você!”</div>
+          <div style="height:1px;background:#2A2E32"></div>
+          <div style="font:300 16px/1.55 Spectral,serif;color:#5E656B">“Garantimos o seu direito. Fale já com nossos especialistas!”</div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:clamp(56px,8vw,100px);padding-top:clamp(24px,3vw,36px);border-top:1px solid #2A2E32">
+        <div style="display:flex;align-items:center;gap:14px"><div style="width:26px;aspect-ratio:1;background:#5E656B;clip-path:polygon(0 0,72% 0,100% 28%,100% 100%,0 100%);container-type:inline-size;display:flex;align-items:center;justify-content:center"><div style="font:600 40cqi/1 Archivo,sans-serif;letter-spacing:-.05em;color:#E9EAE8;margin-right:.05em">VB</div></div><div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Victor Boechat Advogados</div></div>
+        <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#5E656B">Manual v1.0 — 2026</div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#8A7454&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#8A7454&quot;,&quot;#7E8C96&quot;,&quot;#9A9EA1&quot;],&quot;section&quot;:&quot;Marca&quot;},
+  &quot;showConstruction&quot;: {&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Marca&quot;},
+  &quot;lockupInApps&quot;: {&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Vertical&quot;,&quot;Horizontal&quot;],&quot;default&quot;:&quot;Vertical&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aplicações&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    const lock = p.lockupInApps ?? 'Vertical';
+    return {
+      accent: p.accent ?? '#8A7454',
+      accentText: ({'#8A7454':'#B79E77','#7E8C96':'#A8B4BD','#9A9EA1':'#C2C6C9'})[p.accent ?? '#8A7454'] ?? '#B79E77',
+      showConstruction: p.showConstruction ?? true,
+      appsVertical: lock === 'Vertical',
+      appsHorizontal: lock === 'Horizontal'
+    };
+  }
+}
+</script>
+</body>
+</html>
