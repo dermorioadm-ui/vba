@@ -133,7 +133,12 @@ body = body.replace(
     : `<a href="${CONTACT.whatsapp}" target="_blank" rel="noopener" style="${st}">${txt}</a>`,
 );
 
-// 7. Sobras do envelope do editor.
+// 7. Caminhos de mídia: o canvas os escrevia relativos ("assets/hero.mp4"),
+//    o resto da página usa absolutos. Uniformiza, para não dependerem de
+//    onde a página é servida.
+body = body.replace(/(\ssrc=")assets\//g, '$1/assets/');
+
+// 8. Sobras do envelope do editor.
 body = body.replace(/<\/?x-dc>/g, '').replace(/\s+data-screen-label="[^"]*"/g, '').trim();
 
 for (const leftover of ['<sc-', '{{', 'style-hover', 'image-slot', '<x-dc']) {

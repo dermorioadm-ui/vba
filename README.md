@@ -123,8 +123,15 @@ branch de produção é `claude/vibrant-noether-cdduej`, que é a default do
 repositório. Feito isso, cada push publica sozinho e nada abaixo é
 necessário.
 
+Não há etapa de build a configurar: `index.html` já vai pronto no
+repositório. Se a Vercel tentar buildar, é só deixar Framework Preset em
+"Other" com Build Command e Output Directory vazios. `.vercelignore` mantém
+`design/`, `tools/` e este README fora do que é servido.
+
 Enquanto não estiver ligado, o site no ar fica congelado no commit do último
-deploy manual e **não acompanha os pushes**.
+deploy manual e **não acompanha os pushes** — e a API só aceita um deploy
+manual por projeto, então cada atualização por essa via exigiria um projeto
+novo, com URL nova.
 
 ### Deploy manual, enquanto o Git não está ligado
 
