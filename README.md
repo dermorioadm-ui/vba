@@ -89,7 +89,41 @@ O original de 8,4 MB não está versionado — ele vive no pacote de design.
 Estático na Vercel, a partir da raiz do repositório. Sem etapa de build:
 `index.html` já vai versionado, e `vercel.json` só define cache e cabeçalhos.
 
-**Pendente:** conectar este repositório ao projeto da Vercel em
-Settings → Git, para que cada push publique sozinho. Enquanto isso não é
-feito, a produção é atualizada por deploy manual de arquivos, e o site no ar
-pode ficar atrás do repositório.
+Projeto: `victor-boechat` (team `dermorioadm-6326s-projects`).
+
+### Pendente: conectar o Git
+
+O projeto **não está ligado** a este repositório. Em
+Settings → Git → Connect Git Repository, escolher `dermorioadm-ui/vba`. A
+branch de produção é `claude/vibrant-noether-cdduej`, que é a default do
+repositório. Feito isso, cada push publica sozinho e nada abaixo é
+necessário.
+
+Enquanto não estiver ligado, o site no ar fica congelado no commit do último
+deploy manual e **não acompanha os pushes**.
+
+### Deploy manual, enquanto o Git não está ligado
+
+Sem a ligação com o Git, o deploy tem que carregar os arquivos — e os 1,8 MB
+de mídia não passam por uma chamada de API. A ponte é um deploy de três
+arquivos que busca o site de um commit fixado (o repositório é público):
+
+`package.json`
+```json
+{ "private": true, "scripts": { "build": "node fetch-site.mjs" } }
+```
+
+`fetch-site.mjs` baixa `index.html`, `favicon.svg`, `robots.txt` e
+`assets/{site.js,hero.mp4,hero-poster.jpg,victor.jpg}` de
+`raw.githubusercontent.com/dermorioadm-ui/vba/<sha>/` para `public/`.
+
+Mais o `vercel.json` deste repositório, sem alteração. O SHA fica fixo no
+script, então o deploy é reproduzível — e trocar o SHA é o que "atualiza" o
+site enquanto o Git não estiver ligado.
+
+### Projetos órfãos na Vercel
+
+`victor-boechat-advogados`, `vba` e `vb-advogados` foram criados em
+tentativas de ligar o Git e ficaram inutilizáveis (a API cria o projeto e
+depois não consegue lê-lo). Podem ser apagados no dashboard; nenhum deles
+serve o site.
