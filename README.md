@@ -40,8 +40,11 @@ React-like:
 | `state.menu` | atributo `[hidden]` em `#vb-menu`, alternado por JS |
 | props (`heroTreatment`, `density`) | constantes resolvidas no build |
 
-Mudanças de comportamento precisam ser feitas nos dois lugares, ou o canvas e o
-site publicado divergem.
+**A fonte de verdade do comportamento é `assets/site.js`.** A cópia dentro do
+`<script type="text/x-dc">` do canvas já divergiu e não vai para o site — o
+build corta o body ali. Reexportar o canvas por cima de `assets/site.js`
+desfaz em silêncio o listener único, o cache da altura da nav e a transição
+Vocabulário → Método. O aviso está no topo daquele bloco.
 
 ## Diferenças em relação ao canvas
 
@@ -87,6 +90,56 @@ Chromium, rolagem contínua de 170 frames: p95 de 19,5ms para 17,0ms
 
 `[id]{scroll-margin-top:var(--vb-nav)}` é o que faz um link de âncora parar
 abaixo da nav sticky em vez de entregar a seção por baixo dela.
+
+## A transição entre dobras
+
+Duas passagens usam a mesma transição: Hero → Atuação e Vocabulário → Método.
+Ela tem quatro partes, e as quatro precisam estar presentes ou a coisa não lê
+igual:
+
+1. **O cruzamento.** O que sai vai para a esquerda enquanto o que entra vem da
+   direita.
+2. **O travamento.** `outX` não vem de um scroll genérico: vem do topo da
+   próxima seção. Sair e entrar são frame a frame o mesmo evento.
+3. **O paralaxe.** Duas velocidades, razão 1,08 : 0,80.
+4. **A divisão de trabalho.** A camada rápida *não* desbota — sai por geometria.
+   A lenta viaja menos e é o fade que termina o serviço. Inverter isso faz ler
+   como dissolve, não como wipe.
+
+Quem é rápido se decide pela **posição, não pelo tipo de conteúdo**: o elemento
+mais à esquerda é o mais veloz, para que o vão entre as camadas ABRA e elas
+nunca se atropelem. No hero o cartão de vídeo está à esquerda; no Vocabulário
+quem está à esquerda é a coluna de texto — então é o texto que lidera, e a
+figura segue. Escolher pelo tipo ("a imagem é a camada principal") faz o SVG
+passar por cima da tipografia entre 900px e 1280px de largura.
+
+As camadas do Vocabulário são declaradas na marcação:
+
+| atributo | quem | fator |
+| --- | --- | --- |
+| `data-vout-x` | deslocamento, em múltiplos de `vw` | texto 1,08 · figura 0,80 · contadores 0,55 |
+| `data-vout-o` | fade, `1 − outX·fator` | trilho e figura 0,85 · contadores 1 |
+| `data-vout-y` | Y a preservar do `style` inline | contadores `-50%` |
+
+O trilho não viaja (`data-vout-x="0"`): ele é full-bleed, e deslizá-lo faria a
+barra de progresso parecer *retrair* logo depois de marcar 100%.
+
+Três armadilhas que o código carrega comentadas, porque nenhuma dá erro quando
+violada — só quebra em silêncio:
+
+- **`[data-figwrap]` tem dois donos.** O scrub escreve `translateY` nele e a
+  saída escreve `translateX`. Os dois saem na mesma atribuição; separá-los faz o
+  último do frame vencer.
+- **Nada de `data-vout-*` em `[data-word]`, `[data-desc]`, `[data-fig]`,
+  `[data-count]` ou `[data-count-label]`.** O `set(i)` põe `transition` neles;
+  escrita por frame vira elástico atrasado.
+- **O denominador de `outX` no scrub é `100svh`, não `innerHeight`.** No celular
+  de barra retrátil `innerHeight > 100svh`, e a saída começaria com o último
+  verbete ainda entrando.
+
+Nenhum estado inicial mora na marcação — nem `opacity:0`, nem transform. Sob
+`prefers-reduced-motion: reduce` o mount retorna antes das animações, e o que
+estivesse escondido no HTML ficaria escondido para sempre.
 
 ## Acessibilidade e performance
 

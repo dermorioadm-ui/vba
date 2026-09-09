@@ -133,9 +133,10 @@
           const y = yEnd * shrink;
           // saída lateral amarrada à dobra que chega: o cartão só limpa a tela
           // quando o topo da próxima seção encosta em zero
-          const next = sec.nextElementSibling;
-          const nTop = next ? next.getBoundingClientRect().top : window.innerHeight;
-          const outX = ease(1 - Math.min(1, Math.max(0, nTop / Math.max(1, window.innerHeight))));
+          // r.bottom é o topo da próxima seção (irmãos adjacentes, verificado
+          // em navegador: diferença de 0px em qualquer rolagem) e já foi lido
+          // acima — ler o rect do vizinho custava um reflow forçado por frame.
+          const outX = ease(1 - Math.min(1, Math.max(0, r.bottom / Math.max(1, window.innerHeight))));
           const x = xEnd * shrink - outX * vw * 1.08;
           const ry = -9 * shrink, rx = 2.4 * shrink;
           if (vid) {
@@ -220,14 +221,18 @@
         if (!nodes.length) return;
         const seg = (v, x, y) => Math.min(1, Math.max(0, (v - x) / (y - x)));
         const ease = t => 1 - Math.pow(1 - t, 3);
+        // Lê todos os rects antes de escrever qualquer estilo. Com um nó só
+        // dava na mesma; com dois (#atuacao e #metodo), ler o segundo depois de
+        // escrever no primeiro força um flush de layout por frame.
+        const tops = new Array(nodes.length);
         const onScroll = () => {
           const vhWin = window.innerHeight;
-          nodes.forEach(n => {
-            const r = n.getBoundingClientRect();
-            const k = ease(seg(r.top, vhWin, vhWin * 0.28));
-            n.style.transform = 'translateX(' + ((1 - k) * 62).toFixed(2) + '%)';
-            n.style.opacity = (0.15 + 0.85 * k).toFixed(3);
-          });
+          for (let i = 0; i < nodes.length; i++) tops[i] = nodes[i].getBoundingClientRect().top;
+          for (let i = 0; i < nodes.length; i++) {
+            const k = ease(seg(tops[i], vhWin, vhWin * 0.28));
+            nodes[i].style.transform = 'translateX(' + ((1 - k) * 62).toFixed(2) + '%)';
+            nodes[i].style.opacity = (0.15 + 0.85 * k).toFixed(3);
+          }
         };
         this._onSlide = onScroll;
         this._onFrame(onScroll);
@@ -319,14 +324,50 @@
         };
         this._i = -1;
         const stage2 = sec.querySelector('[data-scrub-stage]');
+        // Camadas da saída lateral, a mesma que o hero faz ao entregar a dobra
+        // seguinte. Fatores lidos uma vez; o Y é o transform que já vivia no
+        // style inline (os contadores carregam translateY(-50%)) e precisa
+        // sobreviver à escrita por frame.
+        const outs = q('[data-vout-x]').map(el => ({
+          el: el,
+          fx: parseFloat(el.getAttribute('data-vout-x')) || 0,
+          fo: parseFloat(el.getAttribute('data-vout-o') || '0') || 0,
+          y: el.getAttribute('data-vout-y') || '0'
+        }));
+        let outPrev = -1, vwPrev = -1;
         const onScroll = () => {
           const r = sec.getBoundingClientRect();
           const navH = this._navH || 0;
-          const total = sec.offsetHeight - (stage2 ? stage2.clientHeight : window.innerHeight);
+          const stageH = stage2 ? stage2.clientHeight : window.innerHeight;
+          const total = sec.offsetHeight - stageH;
           const prog = total > 0 ? Math.min(1, Math.max(0, (navH - r.top) / total)) : 0;
 
+          // r.bottom É o topo de #metodo: são irmãos adjacentes, verificado em
+          // navegador com diferença de 0px em qualquer rolagem. Ler o rect do
+          // vizinho custaria um reflow forçado por frame.
+          // O denominador é 100svh (stageH + navH), não innerHeight: no celular
+          // de barra retrátil innerHeight > 100svh e a saída começaria com o
+          // último verbete ainda entrando, tirando a função do scrub.
+          const vw = window.innerWidth;
+          const outX = ease(1 - Math.min(1, Math.max(0, r.bottom / Math.max(1, stageH + navH))));
+
+          // outX antes do rail: width é a única escrita do _scrub que invalida
+          // layout, e ler r.bottom depois dela forçaria recálculo.
           if (rail) rail.style.width = (prog * 100).toFixed(2) + '%';
-          if (figwrap) figwrap.style.transform = 'translateY(' + (-26 * prog).toFixed(1) + 'px)';
+          // X da saída e Y do scrub na MESMA atribuição — são dois donos do
+          // mesmo transform, e escrever separado faz o último do frame vencer.
+          if (figwrap) {
+            figwrap.style.transform = 'translate3d(' + (-outX * vw * 0.8).toFixed(1) + 'px,' + (-26 * prog).toFixed(1) + 'px,0)';
+            figwrap.style.opacity = (1 - outX * 0.85).toFixed(3);
+          }
+          if (outX !== outPrev || vw !== vwPrev) {
+            outPrev = outX; vwPrev = vw;
+            for (let k = 0; k < outs.length; k++) {
+              const L = outs[k];
+              L.el.style.transform = 'translate3d(' + (-outX * vw * L.fx).toFixed(1) + 'px,' + L.y + ',0)';
+              if (L.fo) L.el.style.opacity = (1 - outX * L.fo).toFixed(3);
+            }
+          }
           const i = Math.min(n - 1, Math.floor(prog * n));
           if (step) step.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
           if (i !== this._i) { this._i = i; set(i); }
