@@ -6,7 +6,8 @@ dependências em runtime — só `index.html`, um JS e dois arquivos de mídia.
 ```
 index.html          gerado — não editar à mão
 assets/site.js      comportamento (hero cinemático, scrub, reveals, menu)
-assets/hero.mp4     vídeo do hero (H.264, sem áudio, 8,4 MB)
+assets/hero.mp4     vídeo do hero (H.264, sem áudio, 1,6 MB)
+assets/hero-poster.jpg  primeiro frame, exibido enquanto o vídeo carrega
 assets/victor.jpg   retrato
 design/*.dc.html    fontes de design (canvas do Claude Design)
 tools/build.mjs     conversor design → index.html
@@ -69,11 +70,26 @@ não funciona: os caminhos de `assets/` são absolutos.
 página vira uma leitura estática, o que é o comportamento correto para um site
 com hero de 3 telas de altura.
 
-O hero carrega 8,4 MB de vídeo em `preload="auto"`, herdado do design. É o
-gargalo de carregamento da página; comprimir ou gerar um `poster` são as
-próximas melhorias óbvias.
+O vídeo do design vinha a 8,7 Mb/s (8,4 MB para 8 segundos), o que dominava o
+carregamento da página. Foi reencodado — SSIM 0,96 contra o original, e ele
+ainda aparece sob um scrim preto de 52%, então a diferença é imperceptível:
+
+```sh
+ffmpeg -i original.mp4 -an -c:v libx264 -preset slow -crf 30 \
+  -pix_fmt yuv420p -profile:v high -level 4.0 -movflags +faststart -g 48 \
+  assets/hero.mp4
+ffmpeg -i original.mp4 -vf "select=eq(n\,0),scale=1280:-2" -frames:v 1 -q:v 6 \
+  assets/hero-poster.jpg
+```
+
+O original de 8,4 MB não está versionado — ele vive no pacote de design.
 
 ## Publicação
 
-Estático na Vercel, a partir da raiz do repositório. Sem etapa de build no
-deploy — `index.html` já vai versionado.
+Estático na Vercel, a partir da raiz do repositório. Sem etapa de build:
+`index.html` já vai versionado, e `vercel.json` só define cache e cabeçalhos.
+
+**Pendente:** conectar este repositório ao projeto da Vercel em
+Settings → Git, para que cada push publique sozinho. Enquanto isso não é
+feito, a produção é atualizada por deploy manual de arquivos, e o site no ar
+pode ficar atrás do repositório.

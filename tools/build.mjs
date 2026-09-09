@@ -71,6 +71,8 @@ body = body.replace(
 body = body
   .replace(/\s+onClick="\{\{\s*toggleMenu\s*\}\}"/g, ' data-vb-menu-toggle')
   .replace(/\s+(autoPlay|muted|loop|playsInline)="\{\{\s*true\s*\}\}"/g, (_, a) => ' ' + a.toLowerCase())
+  // O canvas não tinha poster: o hero ficava preto até o primeiro frame chegar.
+  .replace(/(<video\b(?=[^>]*\bdata-hero-video\b))/, '$1 poster="/assets/hero-poster.jpg"')
   .replace(/\btabIndex=/g, 'tabindex=');
 
 // 3. Interpolações restantes (só props escalares sobram aqui).
