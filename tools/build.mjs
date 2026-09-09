@@ -71,6 +71,8 @@ body = body.replace(
 body = body
   .replace(/\s+onClick="\{\{\s*toggleMenu\s*\}\}"/g, ' data-vb-menu-toggle')
   .replace(/\s+(autoPlay|muted|loop|playsInline)="\{\{\s*true\s*\}\}"/g, (_, a) => ' ' + a.toLowerCase())
+  // O canvas não tinha poster: o hero ficava preto até o primeiro frame chegar.
+  .replace(/(<video\b(?=[^>]*\bdata-hero-video\b))/, '$1 poster="/assets/hero-poster.jpg"')
   .replace(/\btabIndex=/g, 'tabindex=');
 
 // 3. Interpolações restantes (só props escalares sobram aqui).
@@ -131,7 +133,12 @@ body = body.replace(
     : `<a href="${CONTACT.whatsapp}" target="_blank" rel="noopener" style="${st}">${txt}</a>`,
 );
 
-// 7. Sobras do envelope do editor.
+// 7. Caminhos de mídia: o canvas os escrevia relativos ("assets/hero.mp4"),
+//    o resto da página usa absolutos. Uniformiza, para não dependerem de
+//    onde a página é servida.
+body = body.replace(/(\ssrc=")assets\//g, '$1/assets/');
+
+// 8. Sobras do envelope do editor.
 body = body.replace(/<\/?x-dc>/g, '').replace(/\s+data-screen-label="[^"]*"/g, '').trim();
 
 for (const leftover of ['<sc-', '{{', 'style-hover', 'image-slot', '<x-dc']) {
@@ -160,6 +167,9 @@ const head = `<meta charset="utf-8">
 ${helmet}
 <style>
   html{scroll-behavior:smooth}
+  /* A nav é sticky: sem isso um link de âncora entrega a seção por baixo dela.
+     O canvas só declarava em algumas seções — #atuacao e #metodo ficavam de fora. */
+  [id]{scroll-margin-top:var(--vb-nav,80px)}
   .vb-menu[hidden]{display:none}
   @media (max-width:${MOBILE_MAX}px){.vb-desk{display:none}}
   @media (min-width:${DESKTOP_MIN}px){.vb-mob{display:none}}

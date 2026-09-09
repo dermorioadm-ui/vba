@@ -31,6 +31,9 @@
 </style>
 <style>
   html{scroll-behavior:smooth}
+  /* A nav é sticky: sem isso um link de âncora entrega a seção por baixo dela.
+     O canvas só declarava em algumas seções — #atuacao e #metodo ficavam de fora. */
+  [id]{scroll-margin-top:var(--vb-nav,80px)}
   .vb-menu[hidden]{display:none}
   @media (max-width:759px){.vb-desk{display:none}}
   @media (min-width:760px){.vb-mob{display:none}}
@@ -144,13 +147,13 @@
   </div>
 
   <!-- HERO → BANDA PRETA (transição travada) -->
-  <section id="topo" data-cine="1" style="position:relative;height:300svh;background:#000000">
+  <section id="topo" data-cine="1" style="position:relative;height:200svh;background:#000000">
 
     <div data-cine-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;background:#000000;perspective:1400px;perspective-origin:50% 44%">
 
       <div data-cine-video="1" style="position:absolute;inset:0;overflow:hidden;border-radius:0px;transform-origin:50% 50%;will-change:transform;background:#0d0d0d">
         
-          <video data-hero-video="1" src="assets/hero.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+          <video poster="/assets/hero-poster.jpg" data-hero-video="1" src="/assets/hero.mp4" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
         
         
         <div data-cine-scrim="1" style="position:absolute;inset:0;background:#000000;opacity:.52;pointer-events:none"></div>
@@ -272,8 +275,8 @@
 
 
   <!-- VOCABULÁRIO (sticky) -->
-  <section data-scrub="1" style="scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:var(--vb-nav,80px);position:relative;background:#000000;height:240svh">
-<div aria-hidden="true" style="position:absolute;left:0;top:16.67%;width:1px;height:1px;scroll-snap-align:start;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:33.33%;width:1px;height:1px;scroll-snap-align:start;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:50.00%;width:1px;height:1px;scroll-snap-align:start;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:66.67%;width:1px;height:1px;scroll-snap-align:start;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:83.33%;width:1px;height:1px;scroll-snap-align:start;pointer-events:none"></div>
+  <section data-scrub="1" style="scroll-margin-top:var(--vb-nav,80px);position:relative;background:#000000;height:200svh">
+<div aria-hidden="true" style="position:absolute;left:0;top:16.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:33.33%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:50.00%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:66.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:83.33%;width:1px;height:1px;pointer-events:none"></div>
     <div data-scrub-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;display:flex;align-items:center">
       <div aria-hidden="true" style="position:absolute;right:clamp(16px,3vw,32px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:4"><div style="display:flex;align-items:center;gap:10px"><span data-count-label="0" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">01</span><div data-count="0" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="1" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">02</span><div data-count="1" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="2" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">03</span><div data-count="2" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="3" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">04</span><div data-count="3" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="4" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">05</span><div data-count="4" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="5" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">06</span><div data-count="5" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.16)"><div data-rail="1" style="height:1px;width:0%;background:#ffffff"></div></div>
@@ -350,7 +353,7 @@
 
 
   <!-- GLOSSÁRIO (marquee) -->
-  <section style="scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
+  <section style="scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,32px);display:flex;flex-direction:column;gap:16px">
       <div data-reveal="left" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Glossário</div>
       <h2 data-reveal="left" data-reveal-delay="80" style="margin:0 0 clamp(24px,4vw,48px);max-width:24ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#ffffff">O que os termos querem dizer</h2>
@@ -361,10 +364,10 @@
   </section>
 
   <!-- ESCRITÓRIO -->
-  <section id="escritorio" style="scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="escritorio" style="scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,64px);align-items:center">
       <div data-reveal="left" style="border-radius:16px;overflow:hidden;background:#e5e5e5;aspect-ratio:1066/1600;height:min(78svh,610px);width:auto;max-width:100%;justify-self:start;min-width:0">
-        <img src="assets/victor.jpg" alt="Victor Boechat, advogado — OAB/RJ 206.210" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 45.3%;display:block">
+        <img src="/assets/victor.jpg" alt="Victor Boechat, advogado — OAB/RJ 206.210" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 45.3%;display:block">
       </div>
       <div data-reveal="right" data-reveal-delay="120" style="display:flex;flex-direction:column;gap:32px;min-width:0">
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">O escritório</div>
@@ -380,7 +383,7 @@
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" style="scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="contato" style="scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,64px);align-items:end">
       <div data-reveal="left" style="display:flex;flex-direction:column;gap:24px;min-width:0">
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">Contato</div>

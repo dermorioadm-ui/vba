@@ -3,7 +3,7 @@
  * design/site.dc.html.
  *
  * Os métodos de animação (_cine, _scrub, _slideIn, _heroIn, _drawLines,
- * _prep, _play, _loopVideo, _measureNav, _navHeight, _snap) são idênticos
+ * _prep, _play, _loopVideo, _measureNav, _navHeight) são idênticos
  * aos do canvas: já eram DOM puro. O que mudou é a camada de estado, que
  * no editor era React-like:
  *   state.mobile  -> media query em CSS (.vb-desk / .vb-mob)
@@ -24,8 +24,7 @@
       if (!hh || hh === this._navH) return;
       this._navH = hh;
       document.documentElement.style.setProperty('--vb-nav', hh + 'px');
-      if (this._onCine) this._onCine();
-      if (this._onScroll) this._onScroll();
+      if (this._schedule) this._schedule();
     },
 
     _navHeight: function () {
@@ -39,10 +38,26 @@
       setTimeout(apply, 400);
     },
 
-    _snap: function () {
-      const el = document.scrollingElement || document.documentElement;
-      el.style.scrollSnapType = 'y proximity';
-      el.style.scrollBehavior = 'smooth';
+    // Um único listener de scroll para as três animações, coalescido por frame.
+    // O canvas registrava 11 listeners (window, document, body e
+    // scrollingElement, vezes cine/scrub/slide) que rodavam sincronamente a
+    // cada evento de roda — várias vezes por frame, cada um lendo layout.
+    _bus: function () {
+      const self = this;
+      const jobs = [];
+      let pending = false;
+      const run = function () {
+        pending = false;
+        for (let i = 0; i < jobs.length; i++) jobs[i]();
+      };
+      this._schedule = function () {
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(run);
+      };
+      this._onFrame = function (fn) { jobs.push(fn); fn(); };
+      window.addEventListener('scroll', this._schedule, { passive: true });
+      window.addEventListener('resize', this._schedule);
     },
 
     _heroIn: function () {
@@ -85,12 +100,11 @@
         const onScroll = () => {
           const r = sec.getBoundingClientRect();
           const vh = stage ? stage.clientHeight : window.innerHeight;
-          const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vb-nav')) || 0;
+          const navH = this._navH || 0;
           const total = sec.offsetHeight - vh;
           const p = total > 0 ? Math.min(1, Math.max(0, (navH - r.top) / total)) : 0;
 
           const pad = Math.min(72, Math.max(32, vh * 0.06));
-          const stmtH = stmt ? stmt.offsetHeight : 0;
           // o cartão só ocupa o espaço acima do texto, com folga para as placas (±20px)
           const vw = window.innerWidth;
           const side = vw >= 760;
@@ -98,7 +112,14 @@
           const designW = side ? vw * 0.6 : vw;
           const stmtW = side ? Math.max(240, vw * 0.4 - pad * 2) : 0;
           const availW = designW - pad * 2;
-          const availH = side ? (vh - pad * 2) : Math.max(150, vh - stmtH - pad - 40);
+          // offsetHeight força layout: no desktop nem entra na conta, e no
+          // mobile só muda quando a viewport muda.
+          let availH = vh - pad * 2;
+          if (!side) {
+            const key = vw + 'x' + vh;
+            if (stmt && key !== this._stmtKey) { this._stmtKey = key; this._stmtH = stmt.offsetHeight; }
+            availH = Math.max(150, vh - (this._stmtH || 0) - pad - 40);
+          }
           // os desenhos passam 16% da moldura e a perspectiva amplia ~12% -> reserva 1.32x
           const FOOT = 1.32;
           const sEnd = side
@@ -153,35 +174,43 @@
           const st = ease(seg(p, 0.62, 0.92));
           if (stmt) {
             stmt.style.opacity = (st * (1 - outX)).toFixed(3);
+            // Posição e caixa do bloco só mudam quando o layout vira de lado
+            // para embaixo, não a cada frame — left/top/width invalidam layout,
+            // e reescrevê-los a cada scroll custava um reflow por frame. Por
+            // frame ficam só opacity e transform, que a composição resolve.
+            const layout = side + '|' + pad + '|' + stmtW;
+            const relayout = layout !== stmt._vbLayout;
+            if (relayout) stmt._vbLayout = layout;
             if (side) {
-              stmt.style.left = 'auto';
-              stmt.style.right = pad + 'px';
-              stmt.style.bottom = 'auto';
-              stmt.style.top = '50%';
-              stmt.style.width = stmtW + 'px';
-              stmt.style.padding = '0';
-              stmt.style.zIndex = '5';
-              stmt.style.alignItems = 'flex-start';
-              stmt.style.textAlign = 'left';
+              if (relayout) {
+                stmt.style.left = 'auto';
+                stmt.style.right = pad + 'px';
+                stmt.style.bottom = 'auto';
+                stmt.style.top = '50%';
+                stmt.style.width = stmtW + 'px';
+                stmt.style.padding = '0';
+                stmt.style.zIndex = '5';
+                stmt.style.alignItems = 'flex-start';
+                stmt.style.textAlign = 'left';
+              }
               stmt.style.transform = 'translateY(-50%) translateX(' + (30 * (1 - st) - outX * vw * 0.8).toFixed(1) + 'px)';
             } else {
-              stmt.style.left = '0';
-              stmt.style.right = '0';
-              stmt.style.bottom = pad + 'px';
-              stmt.style.top = 'auto';
-              stmt.style.width = 'auto';
-              stmt.style.padding = '0 16px';
-              stmt.style.alignItems = 'center';
-              stmt.style.textAlign = 'center';
+              if (relayout) {
+                stmt.style.left = '0';
+                stmt.style.right = '0';
+                stmt.style.bottom = pad + 'px';
+                stmt.style.top = 'auto';
+                stmt.style.width = 'auto';
+                stmt.style.padding = '0 16px';
+                stmt.style.alignItems = 'center';
+                stmt.style.textAlign = 'center';
+              }
               stmt.style.transform = 'translate(' + (-outX * vw * 0.8).toFixed(1) + 'px,' + (26 * (1 - st)).toFixed(1) + 'px)';
             }
           }
         };
         this._onCine = onScroll;
-        this._cineTargets = [window, document, document.body, document.scrollingElement].filter((t, k, arr) => t && arr.indexOf(t) === k);
-        this._cineTargets.forEach(t => t.addEventListener('scroll', onScroll, { passive: true }));
-        window.addEventListener('resize', onScroll);
-        onScroll();
+        this._onFrame(onScroll);
       });
     },
 
@@ -201,9 +230,7 @@
           });
         };
         this._onSlide = onScroll;
-        [window, document, document.body].forEach(t => t && t.addEventListener('scroll', onScroll, { passive: true }));
-        window.addEventListener('resize', onScroll);
-        onScroll();
+        this._onFrame(onScroll);
       });
     },
 
@@ -294,7 +321,7 @@
         const stage2 = sec.querySelector('[data-scrub-stage]');
         const onScroll = () => {
           const r = sec.getBoundingClientRect();
-          const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vb-nav')) || 0;
+          const navH = this._navH || 0;
           const total = sec.offsetHeight - (stage2 ? stage2.clientHeight : window.innerHeight);
           const prog = total > 0 ? Math.min(1, Math.max(0, (navH - r.top) / total)) : 0;
 
@@ -305,11 +332,8 @@
           if (i !== this._i) { this._i = i; set(i); }
         };
         this._onScroll = onScroll;
-        this._scrollTargets = [window, document, document.body, document.scrollingElement].filter((t, k, a) => t && a.indexOf(t) === k);
-        this._scrollTargets.forEach(t => t.addEventListener('scroll', onScroll, { passive: true }));
-        window.addEventListener('resize', onScroll);
         set(0);
-        onScroll();
+        this._onFrame(onScroll);
       });
     },
 
@@ -386,7 +410,7 @@
 
     mount: function () {
       var self = this;
-      this._snap();
+      this._bus();
       this._watchWidth();
       this._menu();
       this._navHeight();
