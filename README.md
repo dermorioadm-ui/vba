@@ -69,77 +69,47 @@ não funciona: os caminhos de `assets/` são absolutos.
 
 ## Rolagem
 
-Duas regras, porque o site é uma leitura longa com animação amarrada ao scroll:
+O canvas registra um listener de scroll por animação, em `window`, `document`,
+`body` e `scrollingElement` — que rodam sincronamente a cada evento de roda. No
+site publicado quem dirige é o `_ticker`: um `requestAnimationFrame` contínuo
+que interpola a posição (`_sy` persegue `scrollY` a 14% por frame) e chama os
+handlers com a defasagem resultante em `this._lag`. É essa defasagem que dá a
+inércia ao hero. Os listeners de scroll foram removidos: refaziam o mesmo
+trabalho que o ticker já faz, só que no meio do gesto.
 
-- **Nenhuma seção passa de 2 telas.** O hero e o Vocabulário vinham do canvas
-  com 3 e 2,4 telas — juntos, 54% da página. Eram 7 gestos de trackpad até a
-  segunda dobra; hoje são 4. A coreografia do hero é normalizada pelo
-  progresso da seção (`p` de 0 a 1), então encurtar a seção acelera a
-  sequência sem quebrá-la.
-- **Sem `scroll-snap`.** O canvas tinha `scroll-snap-stop: always` em quatro
-  seções, o que proíbe passar de um ponto de snap num gesto só — é o que
-  travava a mão. Snap e animação de scrub também brigam: o snap anima a
-  posição, que redirige o scrub.
+Duas coisas mais saem do port:
 
-As três animações (hero, scrub, slide-in) compartilham **um** listener de
-scroll coalescido por frame. Cada uma tinha o seu, registrado em quatro alvos
-— 11 listeners rodando sincronamente a cada evento de roda, dois deles lendo
-`--vb-nav` com `getComputedStyle`, que força recálculo de estilo. Medido em
-Chromium, rolagem contínua de 170 frames: p95 de 19,5ms para 17,0ms
-(orçamento de frame: 16,7ms), frames perdidos de 4–7 para 2–3.
+- **`_snap()` não é portado.** O canvas põe `scroll-snap-stop: always`, que
+  proíbe o navegador de passar de um ponto de snap num gesto só — trava a mão, e
+  briga com as animações amarradas ao scroll. As declarações de
+  `scroll-snap-align` que sobram na marcação ficam inertes sem o container.
+- **A altura da nav sai de `this._navH`.** O canvas a relê do CSS com
+  `getComputedStyle` a cada evento, o que força recálculo de estilo.
 
-`[id]{scroll-margin-top:var(--vb-nav)}` é o que faz um link de âncora parar
-abaixo da nav sticky em vez de entregar a seção por baixo dela.
+`[id]{scroll-margin-top:var(--vb-nav)}`, injetado pelo build, é o que faz um
+link de âncora parar abaixo da nav sticky em vez de entregar a seção por baixo
+dela.
 
-## A transição entre dobras
+### O custo do hero
 
-Duas passagens usam a mesma transição: Hero → Atuação e Vocabulário → Método.
-Ela tem quatro partes, e as quatro precisam estar presentes ou a coisa não lê
-igual:
+O hero desenha 14 placas em perspectiva 3D, 10 SVGs de traço e um `blur()`
+animado sobre o texto. Medido em Chromium **headless, que não tem GPU**, uma
+rolagem contínua de 160 frames dá p95 de ~24ms contra os ~17ms do desenho
+anterior. Isolando por eliminação, o custo é do conjunto — nenhum item domina:
 
-1. **O cruzamento.** O que sai vai para a esquerda enquanto o que entra vem da
-   direita.
-2. **O travamento.** `outX` não vem de um scroll genérico: vem do topo da
-   próxima seção. Sair e entrar são frame a frame o mesmo evento.
-3. **O paralaxe.** Duas velocidades, razão 1,08 : 0,80.
-4. **A divisão de trabalho.** A camada rápida *não* desbota — sai por geometria.
-   A lenta viaja menos e é o fade que termina o serviço. Inverter isso faz ler
-   como dissolve, não como wipe.
+| tirando | frames perdidos |
+| --- | --- |
+| nada (baseline) | 19 |
+| o `blur` do texto | 11 |
+| a perspectiva 3D | 11 |
+| os 10 SVGs | 8 |
+| as 14 placas | 7 |
+| o vídeo | 17 (não é ele) |
 
-Quem é rápido se decide pela **posição, não pelo tipo de conteúdo**: o elemento
-mais à esquerda é o mais veloz, para que o vão entre as camadas ABRA e elas
-nunca se atropelem. No hero o cartão de vídeo está à esquerda; no Vocabulário
-quem está à esquerda é a coluna de texto — então é o texto que lidera, e a
-figura segue. Escolher pelo tipo ("a imagem é a camada principal") faz o SVG
-passar por cima da tipografia entre 900px e 1280px de largura.
-
-As camadas do Vocabulário são declaradas na marcação:
-
-| atributo | quem | fator |
-| --- | --- | --- |
-| `data-vout-x` | deslocamento, em múltiplos de `vw` | texto 1,08 · figura 0,80 · contadores 0,55 |
-| `data-vout-o` | fade, `1 − outX·fator` | trilho e figura 0,85 · contadores 1 |
-| `data-vout-y` | Y a preservar do `style` inline | contadores `-50%` |
-
-O trilho não viaja (`data-vout-x="0"`): ele é full-bleed, e deslizá-lo faria a
-barra de progresso parecer *retrair* logo depois de marcar 100%.
-
-Três armadilhas que o código carrega comentadas, porque nenhuma dá erro quando
-violada — só quebra em silêncio:
-
-- **`[data-figwrap]` tem dois donos.** O scrub escreve `translateY` nele e a
-  saída escreve `translateX`. Os dois saem na mesma atribuição; separá-los faz o
-  último do frame vencer.
-- **Nada de `data-vout-*` em `[data-word]`, `[data-desc]`, `[data-fig]`,
-  `[data-count]` ou `[data-count-label]`.** O `set(i)` põe `transition` neles;
-  escrita por frame vira elástico atrasado.
-- **O denominador de `outX` no scrub é `100svh`, não `innerHeight`.** No celular
-  de barra retrátil `innerHeight > 100svh`, e a saída começaria com o último
-  verbete ainda entrando.
-
-Nenhum estado inicial mora na marcação — nem `opacity:0`, nem transform. Sob
-`prefers-reduced-motion: reduce` o mount retorna antes das animações, e o que
-estivesse escondido no HTML ficaria escondido para sempre.
+O número real em máquina com GPU deve ser bem melhor: placas, perspectiva e
+opacidade são exatamente o que a composição acelerada resolve de graça. Se algum
+dia precisar aliviar, os quatro primeiros itens da tabela são as alavancas, nessa
+ordem de retorno.
 
 ## Acessibilidade e performance
 
