@@ -40,8 +40,11 @@ React-like:
 | `state.menu` | atributo `[hidden]` em `#vb-menu`, alternado por JS |
 | props (`heroTreatment`, `density`) | constantes resolvidas no build |
 
-Mudanças de comportamento precisam ser feitas nos dois lugares, ou o canvas e o
-site publicado divergem.
+**A fonte de verdade do comportamento é `assets/site.js`.** A cópia dentro do
+`<script type="text/x-dc">` do canvas já divergiu e não vai para o site — o
+build corta o body ali. Reexportar o canvas por cima de `assets/site.js`
+desfaz em silêncio o listener único, o cache da altura da nav e a transição
+Vocabulário → Método. O aviso está no topo daquele bloco.
 
 ## Diferenças em relação ao canvas
 
@@ -66,27 +69,47 @@ não funciona: os caminhos de `assets/` são absolutos.
 
 ## Rolagem
 
-Duas regras, porque o site é uma leitura longa com animação amarrada ao scroll:
+O canvas registra um listener de scroll por animação, em `window`, `document`,
+`body` e `scrollingElement` — que rodam sincronamente a cada evento de roda. No
+site publicado quem dirige é o `_ticker`: um `requestAnimationFrame` contínuo
+que interpola a posição (`_sy` persegue `scrollY` a 14% por frame) e chama os
+handlers com a defasagem resultante em `this._lag`. É essa defasagem que dá a
+inércia ao hero. Os listeners de scroll foram removidos: refaziam o mesmo
+trabalho que o ticker já faz, só que no meio do gesto.
 
-- **Nenhuma seção passa de 2 telas.** O hero e o Vocabulário vinham do canvas
-  com 3 e 2,4 telas — juntos, 54% da página. Eram 7 gestos de trackpad até a
-  segunda dobra; hoje são 4. A coreografia do hero é normalizada pelo
-  progresso da seção (`p` de 0 a 1), então encurtar a seção acelera a
-  sequência sem quebrá-la.
-- **Sem `scroll-snap`.** O canvas tinha `scroll-snap-stop: always` em quatro
-  seções, o que proíbe passar de um ponto de snap num gesto só — é o que
-  travava a mão. Snap e animação de scrub também brigam: o snap anima a
-  posição, que redirige o scrub.
+Duas coisas mais saem do port:
 
-As três animações (hero, scrub, slide-in) compartilham **um** listener de
-scroll coalescido por frame. Cada uma tinha o seu, registrado em quatro alvos
-— 11 listeners rodando sincronamente a cada evento de roda, dois deles lendo
-`--vb-nav` com `getComputedStyle`, que força recálculo de estilo. Medido em
-Chromium, rolagem contínua de 170 frames: p95 de 19,5ms para 17,0ms
-(orçamento de frame: 16,7ms), frames perdidos de 4–7 para 2–3.
+- **`_snap()` não é portado.** O canvas põe `scroll-snap-stop: always`, que
+  proíbe o navegador de passar de um ponto de snap num gesto só — trava a mão, e
+  briga com as animações amarradas ao scroll. As declarações de
+  `scroll-snap-align` que sobram na marcação ficam inertes sem o container.
+- **A altura da nav sai de `this._navH`.** O canvas a relê do CSS com
+  `getComputedStyle` a cada evento, o que força recálculo de estilo.
 
-`[id]{scroll-margin-top:var(--vb-nav)}` é o que faz um link de âncora parar
-abaixo da nav sticky em vez de entregar a seção por baixo dela.
+`[id]{scroll-margin-top:var(--vb-nav)}`, injetado pelo build, é o que faz um
+link de âncora parar abaixo da nav sticky em vez de entregar a seção por baixo
+dela.
+
+### O custo do hero
+
+O hero desenha 14 placas em perspectiva 3D, 10 SVGs de traço e um `blur()`
+animado sobre o texto. Medido em Chromium **headless, que não tem GPU**, uma
+rolagem contínua de 160 frames dá p95 de ~24ms contra os ~17ms do desenho
+anterior. Isolando por eliminação, o custo é do conjunto — nenhum item domina:
+
+| tirando | frames perdidos |
+| --- | --- |
+| nada (baseline) | 19 |
+| o `blur` do texto | 11 |
+| a perspectiva 3D | 11 |
+| os 10 SVGs | 8 |
+| as 14 placas | 7 |
+| o vídeo | 17 (não é ele) |
+
+O número real em máquina com GPU deve ser bem melhor: placas, perspectiva e
+opacidade são exatamente o que a composição acelerada resolve de graça. Se algum
+dia precisar aliviar, os quatro primeiros itens da tabela são as alavancas, nessa
+ordem de retorno.
 
 ## Acessibilidade e performance
 

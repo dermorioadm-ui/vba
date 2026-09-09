@@ -25,6 +25,14 @@
 <script src="./image-slot.js"></script>
 </helmet>
 
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000000"></rect>
+    <path d="M420 220H679.2L780 320.8V580H420Z" fill="#ffffff"></path>
+    <text x="600" y="428" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="600" font-size="150" letter-spacing="-8" fill="#000000">VB</text>
+  </svg>
+</template>
+
 <div style="--sec: {{ secPad }};background:#ffffff;min-height:100vh;overflow-x:clip">
 
   <!-- NAV -->
@@ -94,8 +102,11 @@
   </sc-if>
 
   <!-- HERO → BANDA PRETA (transição travada) -->
-  <section id="topo" data-screen-label="Hero" data-cine="1" style="position:relative;height:200svh;background:#000000">
+  <section id="topo" data-screen-label="Hero" data-cine="1" style="position:relative;height:300svh;background:#000000">
 
+      <div data-cine-snap="0" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
+      <div data-cine-snap="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
+      <div data-cine-snap="2" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
     <div data-cine-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;background:#000000;perspective:1400px;perspective-origin:50% 44%">
 
       <div data-cine-video="1" style="position:absolute;inset:0;overflow:hidden;border-radius:0px;transform-origin:50% 50%;will-change:transform;background:#0d0d0d">
@@ -116,23 +127,54 @@
         <div data-blue-plate="1" data-z="0" data-dx="0" data-dy="0" style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.42);border-radius:16px;will-change:transform"></div>
         <div data-blue-plate="1" data-z="70" data-dx="32" data-dy="18" style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.58);border-radius:16px;will-change:transform"></div>
         <div data-blue-plate="1" data-z="140" data-dx="58" data-dy="34" style="position:absolute;inset:0;border:1.5px solid rgba(255,255,255,.8);border-radius:14px;will-change:transform"></div>
-        <svg data-blue-plate="1" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="1.4" opacity=".42" stroke-dasharray="3 8"><path d="M0 96H900M0 208H900M0 312H900M0 424H900"></path></g>
           <g stroke-width="1.4" opacity=".34" stroke-dasharray="3 8"><path d="M130 0V520M330 0V520M540 0V520M740 0V520"></path></g>
           <g stroke-width="1.6" opacity=".6"><path d="M120 96H140M130 86V106M320 208H340M330 198V218M530 312H550M540 302V322M730 424H750M740 414V434"></path></g></svg>
-        <svg data-blue-plate="1" data-z="30" data-dx="12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="30" data-dx="12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="2.2" opacity="1"><path d="M70 448C210 448 250 300 382 300C514 300 552 152 700 152"></path></g>
           <g stroke-width="1.4" opacity=".6"><path d="M70 448V492M382 300V492M700 152V492"></path><path d="M40 492H760"></path></g>
           <g stroke-width="1.8" opacity=".9"><rect x="375" y="293" width="14" height="14"></rect><rect x="693" y="145" width="14" height="14"></rect><rect x="63" y="441" width="14" height="14"></rect></g>
           <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity=".85"><text x="66" y="482">60m</text></g></svg>
-        <svg data-blue-plate="1" data-z="150" data-dx="32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="150" data-dx="32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="2.6" opacity="1"><path d="M520 120H722L800 198V400H520Z"></path></g>
           <text x="660" y="330" text-anchor="middle" font-family="Archivo, sans-serif" font-size="152" font-weight="600" letter-spacing="-9" fill="none" stroke="#ffffff" stroke-width="2.2" opacity=".95">VB</text>
           <g stroke-width="1.4" opacity=".55" stroke-dasharray="4 6"><path d="M520 120H210M520 400H210M800 198H900M722 120V20M800 198V20"></path></g>
           <g stroke-width="1.8" opacity=".8"><path d="M722 44H800M722 36V52M800 36V52"></path><path d="M746 120L722 144"></path></g>
-          <g stroke-width="1.8" opacity=".75"><path d="M150 260H210M180 230V290"></path><rect x="170" y="250" width="20" height="20"></rect></g>
           <g stroke-width="1.6" opacity=".7"><path d="M860 198V400M850 198H870M850 400H870"></path></g>
-          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity="1"><text x="736" y="30">45°</text><text x="150" y="240">1515</text></g></svg>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity="1"><text x="736" y="30">45°</text></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.6" opacity=".5"><rect x="322" y="70" width="330" height="392"></rect></g>
+          <g stroke-width="1.6" opacity=".7"><rect x="346" y="92" width="330" height="392"></rect></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="30" data-dx="-12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <rect x="370" y="114" width="330" height="392" stroke-width="2.6" opacity="1"></rect>
+          <g stroke-width="1.8" opacity=".75"><path d="M400 176H670M400 224H670M400 272H670M400 368H670M400 416H616"></path></g>
+          <rect x="386" y="304" width="298" height="44" stroke-width="3" opacity="1"></rect>
+          <g stroke-width="2" opacity=".9"><path d="M386 326H196"></path><path d="M224 306L196 326L224 346"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1.6" opacity="1"><text x="120" y="332">1515</text></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="150" data-dx="-32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.8" opacity=".85"><path d="M370 114V70M370 506V550M700 114V70M700 506V550"></path></g>
+          <g stroke-width="2" opacity=".9"><path d="M370 60H700M370 50V70M700 50V70"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1.6" opacity="1"><text x="470" y="40">FOLHA</text></g></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="-100" data-dx="-20" data-dy="-30" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.8" opacity=".45"><path d="M90 90H150M90 90V150M810 430H750M810 430V370"></path></g>
+          <g stroke-width="1.4" opacity=".28" stroke-dasharray="2 8"><path d="M90 260H810"></path></g></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="30" data-dx="8" data-dy="14" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="2.2" opacity=".5" stroke-dasharray="7 9"><path d="M150 260C340 260 420 120 620 120"></path><path d="M150 260C340 260 420 400 620 400"></path></g>
+          <g stroke-width="2.4" opacity=".7"><path d="M606 106L634 134M634 106L606 134M606 386L634 414M634 386L606 414"></path></g>
+          <path d="M150 260H690" stroke-width="4" opacity="1"></path>
+          <circle cx="150" cy="260" r="13" stroke-width="3.2" opacity="1"></circle>
+          <rect x="690" y="234" width="52" height="52" stroke-width="3.2" opacity="1"></rect></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="150" data-dx="18" data-dy="40" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="2" opacity=".9"><path d="M150 330H742M150 318V342M742 318V342"></path></g>
+          <g stroke-width="1.8" opacity=".55"><path d="M150 274V330M742 288V330"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.6" opacity="1"><text x="396" y="372">1 via</text></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.6" opacity=".6" font-size="12"><text x="656" y="96">descartada</text><text x="656" y="452">descartada</text></g></svg>
+      </div>
+
+      <div data-cine-rail="1" aria-hidden="true" style="position:absolute;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);height:min(44vh,300px);display:flex;align-items:stretch;gap:10px;z-index:4;pointer-events:none">
+        <div style="position:relative;width:1px;background:rgba(255,255,255,.22)"><div data-cine-fill="1" style="position:absolute;left:0;top:0;width:1px;height:0%;background:#ffffff"></div></div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between"><div data-cine-dot="0" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">01</span></div><div data-cine-dot="1" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">02</span></div><div data-cine-dot="2" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">03</span></div></div>
       </div>
 
       <div data-cine-copy="1" style="position:absolute;inset:0;display:flex;justify-content:center;pointer-events:none">
@@ -146,7 +188,7 @@
         </sc-if>
         <div style="width:100%;max-width:1280px;padding:clamp(72px,10vw,140px) clamp(16px,3vw,32px) clamp(40px,5vw,64px);display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(28px,4vw,48px)">
           <div data-hero-in="0" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#ffffff">OAB/RJ 206.210 · Rio de Janeiro</div>
-          <h1 data-hero-in="1" style="margin:0;max-width:22ch;font:400 clamp(34px,6.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff">Direito tributário para empresas e direito militar para quem serve.</h1>
+          <h1 data-hero-in="1" style="margin:0;max-width:min(22ch,58%);font:400 clamp(34px,6.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff">Direito tributário para empresas e direito militar para quem serve.</h1>
           <div data-hero-in="2" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
             <p style="margin:0;max-width:46ch;font:400 clamp(16px,1.6vw,20px)/1.5 Archivo,sans-serif;letter-spacing:-.2px;color:rgba(255,255,255,.82)">Apuração documental, tese fechada e providência única. Sem promessa de resultado, sem volume de processo.</p>
             <div style="display:flex;align-items:center;gap:16px;flex:none"><span style="font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:#ffffff">Rolar para explorar</span><div style="width:40px;height:40px;flex:none;border:1px solid #ffffff;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden"><span style="font:400 16px/1 Archivo,sans-serif;color:#ffffff;animation:vbBob 2.4s ease-in-out infinite">↓</span></div></div>
@@ -154,27 +196,37 @@
         </div>
       </div>
 
-      <div data-cine-stmt="1" style="position:absolute;left:0;right:0;bottom:clamp(32px,6vh,72px);padding:0 clamp(16px,3vw,32px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;opacity:0;pointer-events:none">
-        <h2 style="margin:0;max-width:26ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Duas especialidades, um mesmo método.</h2>
-        <p style="margin:0;max-width:60ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Tributário e militar se encontram no mesmo ponto: uma verba paga, uma norma que a classifica e um desconto que não deveria existir. O trabalho começa na leitura do documento.</p>
+      <div data-cine-stmt="0" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Duas especialidades, um mesmo método.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Tributário e militar se encontram no mesmo ponto: uma verba paga, uma norma que a classifica e um desconto que não deveria existir.</p>
+      </div>
+
+      <div data-cine-stmt="1" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">A prova está no papel.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Contracheque, guia e ficha funcional dizem o que foi pago e sob qual rubrica. É daí que sai a tese — nunca o contrário.</p>
+      </div>
+
+      <div data-cine-stmt="2" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Uma via, a mais curta.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Apuração fechada, valor corrigido e uma única providência. Sem promessa de resultado, sem volume de processo.</p>
       </div>
 
     </div>
   </section>
 
   <!-- ATUAÇÃO -->
-  <section id="atuacao" data-screen-label="Atuacao" style="background:#ffffff;padding:clamp(40px,7vh,84px) clamp(16px,3vw,32px);overflow:clip">
-    <div data-slide-in="1" style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(20px,3vh,30px);will-change:transform">
+  <section id="atuacao" data-screen-label="Atuacao" style="background:#ffffff;padding:clamp(48px,8vh,112px) clamp(16px,3vw,32px) calc(clamp(48px,8vh,112px) + 176px);overflow:clip;min-height:calc(100svh + 176px);display:flex;align-items:center">
+    <div data-slide-in="1" style="width:100%;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,4vh,48px);will-change:transform">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
         <div data-reveal="left" style="display:flex;flex-direction:column;gap:16px">
           <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">Atuação</div>
-          <h2 style="margin:0;max-width:20ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#000000">Três frentes, nenhuma genérica</h2>
+          <h2 style="margin:0;max-width:28ch;font:400 clamp(26px,3.6vw,40px)/1.2 Archivo,sans-serif;letter-spacing:-.4px;color:#000000">Três frentes, nenhuma genérica</h2>
         </div>
         <div style="display:flex;align-items:center;gap:16px;flex:none"><span style="font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:#000000">Rolar para explorar</span><div style="width:40px;height:40px;flex:none;border:1px solid #000000;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden"><span style="font:400 16px/1 Archivo,sans-serif;color:#000000;animation:vbBob 2.4s ease-in-out infinite">↓</span></div></div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div data-reveal="left" style="background:#a8927c;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div data-reveal="left" style="background:#a8927c;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#000000">01 — Empresas e PMEs</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#000000">Tributário</h3>
@@ -190,7 +242,7 @@
           </div>
         </div>
 
-        <div data-reveal="right" style="background:#193a29;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+        <div data-reveal="right" style="background:#193a29;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.8)">02 — Quem serve</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#ffffff">Militar</h3>
@@ -206,7 +258,7 @@
           </div>
         </div>
 
-        <div data-reveal="left" style="background:#839cb2;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+        <div data-reveal="left" style="background:#839cb2;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#000000">03 — Regime próprio e RGPS</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#000000">Previdenciário</h3>
@@ -225,22 +277,50 @@
   </section>
 
 
-  <!-- VOCABULÁRIO (sticky) -->
-  <section data-screen-label="Vocabulario" data-scrub="1" style="scroll-margin-top:var(--vb-nav,80px);position:relative;background:#000000;height:200svh">
-<div aria-hidden="true" style="position:absolute;left:0;top:16.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:33.33%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:50.00%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:66.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:83.33%;width:1px;height:1px;pointer-events:none"></div>
-    <div data-scrub-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;display:flex;align-items:center">
-      <div aria-hidden="true" style="position:absolute;right:clamp(16px,3vw,32px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:4"><div style="display:flex;align-items:center;gap:10px"><span data-count-label="0" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">01</span><div data-count="0" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="1" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">02</span><div data-count="1" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="2" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">03</span><div data-count="2" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="3" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">04</span><div data-count="3" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="4" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">05</span><div data-count="4" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="5" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">06</span><div data-count="5" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div></div>
-      <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.16)"><div data-rail="1" style="height:1px;width:0%;background:#ffffff"></div></div>
-      <div style="width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
-        <div style="display:flex;flex-direction:column;gap:clamp(20px,3vw,32px);min-width:0">
-          <div style="display:flex;align-items:center;gap:16px">
-            <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Vocabulário</div>
-            <div data-step="1" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:#ffffff">01 / 06</div>
-          </div>
-          <div style="position:relative;height:1.15em;font:400 clamp(30px,5.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff"><span data-word="0" style="position:absolute;left:0;top:0;white-space:nowrap">Contracheque</span><span data-word="1" style="position:absolute;left:0;top:0;white-space:nowrap">Rubrica</span><span data-word="2" style="position:absolute;left:0;top:0;white-space:nowrap">Verba indenizatória</span><span data-word="3" style="position:absolute;left:0;top:0;white-space:nowrap">Indébito</span><span data-word="4" style="position:absolute;left:0;top:0;white-space:nowrap">Correção</span><span data-word="5" style="position:absolute;left:0;top:0;white-space:nowrap">Restituição</span></div>
-          <div style="position:relative;min-height:7.5em;font:400 clamp(15px,1.6vw,20px)/1.5 Archivo,sans-serif;letter-spacing:-.2px;color:rgba(255,255,255,.72)"><span data-desc="0" style="position:absolute;left:0;top:0;max-width:44ch">Tudo começa aqui: a folha diz o que foi pago, sob qual rubrica e quanto o Estado retirou.</span><span data-desc="1" style="position:absolute;left:0;top:0;max-width:44ch">Cada linha tem um código. É o código — não o nome — que define a natureza da parcela.</span><span data-desc="2" style="position:absolute;left:0;top:0;max-width:44ch">Recompõe um gasto ou um risco; não acresce patrimônio. Por isso não é base de imposto.</span><span data-desc="3" style="position:absolute;left:0;top:0;max-width:44ch">O que foi recolhido sem base legal. Cinco anos para trás, contados do pedido.</span><span data-desc="4" style="position:absolute;left:0;top:0;max-width:44ch">Entre o desconto indevido e a devolução corre tempo — e o valor é atualizado pelos índices oficiais.</span><span data-desc="5" style="position:absolute;left:0;top:0;max-width:44ch">O caminho de volta: apurado, corrigido e pedido uma única vez, pela via mais curta.</span></div>
+  <!-- VOCABULÁRIO -->
+  <section data-screen-label="Vocabulario" style="position:relative;z-index:3;margin-top:-160px;background:#000000;padding:clamp(56px,9vh,116px) clamp(16px,3vw,32px) clamp(48px,8vh,100px)">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3.4vw,44px)">
+      <div data-reveal="left" style="display:flex;flex-direction:column;gap:16px">
+        <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Vocabulário</div>
+        <h2 style="margin:0;max-width:26ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#ffffff">Seis termos que decidem o caso</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(260px,30%)),1fr));gap:1px;background:rgba(255,255,255,.14)">
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">01</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="0" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><rect x="70" y="30" width="230" height="200"></rect><rect x="86" y="46" width="230" height="200"></rect></g><rect x="102" y="62" width="230" height="200" stroke-width="1"></rect><g stroke-width="1" opacity=".55"><path d="M120 96H314M120 124H314M120 152H314M120 180H260"></path></g><path d="M120 208H206" stroke-width="1.6"></path></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Contracheque</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Tudo começa aqui: a folha diz o que foi pago, sob qual rubrica e quanto o Estado retirou.</p>
         </div>
-        <div data-figwrap="1" style="position:relative;width:100%;aspect-ratio:4/3;max-height:36svh;margin:0 auto;min-width:0;will-change:transform"><svg data-fig="0" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><rect x="70" y="30" width="230" height="200"></rect><rect x="86" y="46" width="230" height="200"></rect></g><rect x="102" y="62" width="230" height="200" stroke-width="1"></rect><g stroke-width="1" opacity=".55"><path d="M120 96H314M120 124H314M120 152H314M120 180H260"></path></g><path d="M120 208H206" stroke-width="1.6"></path></svg><svg data-fig="1" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 60H340M60 105H340M60 150H340M60 195H340M60 240H340"></path><path d="M60 60V240M130 60V240M200 60V240M270 60V240M340 60V240"></path></g><rect x="60" y="150" width="280" height="45" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M348 150V195M344 150H352M344 195H352"></path></g></svg><svg data-fig="2" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="46" y="90" width="140" height="120" stroke-width="1.6"></rect><rect x="214" y="90" width="140" height="120" stroke-width="1" stroke-dasharray="6 6" opacity=".5"></rect><g stroke-width="1" opacity=".5"><path d="M186 150H214"></path></g><path d="M46 240H186" stroke-width="1"></path></svg><svg data-fig="3" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><path d="M40 120V180M60 120V180M80 120V180M100 120V180M120 120V180M140 120V180M160 120V180M180 120V180M200 120V180M220 120V180M240 120V180M260 120V180M280 120V180M300 120V180M320 120V180M340 120V180M360 120V180"></path></g><rect x="40" y="120" width="200" height="60" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M40 200H240M40 194V206M240 194V206"></path></g></svg><svg data-fig="4" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 240H340"></path><path d="M60 60V240"></path></g><path d="M60 220L130 200L200 165L270 115L340 70" stroke-width="1.6"></path><g stroke-width="1" opacity=".45"><path d="M130 240V200M200 240V165M270 240V115"></path></g></svg><svg data-fig="5" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="250" y="118" width="64" height="64" stroke-width="1.6"></rect><path d="M86 150H250" stroke-width="1.6"></path><path d="M110 126L86 150L110 174" stroke-width="1.6"></path><g stroke-width="1" opacity=".4"><circle cx="314" cy="150" r="3"></circle><path d="M86 210H314"></path></g></svg></div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">02</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="1" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 60H340M60 105H340M60 150H340M60 195H340M60 240H340"></path><path d="M60 60V240M130 60V240M200 60V240M270 60V240M340 60V240"></path></g><rect x="60" y="150" width="280" height="45" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M348 150V195M344 150H352M344 195H352"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Rubrica</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Cada linha tem um código. É o código — não o nome — que define a natureza da parcela.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">03</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="2" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="46" y="90" width="140" height="120" stroke-width="1.6"></rect><rect x="214" y="90" width="140" height="120" stroke-width="1" stroke-dasharray="6 6" opacity=".5"></rect><g stroke-width="1" opacity=".5"><path d="M186 150H214"></path></g><path d="M46 240H186" stroke-width="1"></path></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Verba indenizatória</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Recompõe um gasto ou um risco; não acresce patrimônio. Por isso não é base de imposto.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">04</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="3" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><path d="M40 120V180M60 120V180M80 120V180M100 120V180M120 120V180M140 120V180M160 120V180M180 120V180M200 120V180M220 120V180M240 120V180M260 120V180M280 120V180M300 120V180M320 120V180M340 120V180M360 120V180"></path></g><rect x="40" y="120" width="200" height="60" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M40 200H240M40 194V206M240 194V206"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Indébito</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">O que foi recolhido sem base legal. Cinco anos para trás, contados do pedido.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">05</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="4" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 240H340"></path><path d="M60 60V240"></path></g><path d="M60 220L130 200L200 165L270 115L340 70" stroke-width="1.6"></path><g stroke-width="1" opacity=".45"><path d="M130 240V200M200 240V165M270 240V115"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Correção</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Entre o desconto indevido e a devolução corre tempo — e o valor é atualizado pelos índices oficiais.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">06</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="5" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="250" y="118" width="64" height="64" stroke-width="1.6"></rect><path d="M86 150H250" stroke-width="1.6"></path><path d="M110 126L86 150L110 174" stroke-width="1.6"></path><g stroke-width="1" opacity=".4"><circle cx="314" cy="150" r="3"></circle><path d="M86 210H314"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Restituição</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">O caminho de volta: apurado, corrigido e pedido uma única vez, pela via mais curta.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -304,7 +384,7 @@
 
 
   <!-- GLOSSÁRIO (marquee) -->
-  <section data-screen-label="Glossario" style="scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
+  <section data-screen-label="Glossario" style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,32px);display:flex;flex-direction:column;gap:16px">
       <div data-reveal="left" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Glossário</div>
       <h2 data-reveal="left" data-reveal-delay="80" style="margin:0 0 clamp(24px,4vw,48px);max-width:24ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#ffffff">O que os termos querem dizer</h2>
@@ -315,7 +395,7 @@
   </section>
 
   <!-- ESCRITÓRIO -->
-  <section id="escritorio" data-screen-label="Escritorio" style="scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="escritorio" data-screen-label="Escritorio" style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,64px);align-items:center">
       <div data-reveal="left" style="border-radius:16px;overflow:hidden;background:#e5e5e5;aspect-ratio:1066/1600;height:min(78svh,610px);width:auto;max-width:100%;justify-self:start;min-width:0">
         <image-slot id="vb-retrato" src="assets/victor.jpg" shape="rect" fit="cover" placeholder="Solte aqui o retrato do Victor"></image-slot>
@@ -334,7 +414,7 @@
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" data-screen-label="Contato" style="scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="contato" data-screen-label="Contato" style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,64px);align-items:end">
       <div data-reveal="left" style="display:flex;flex-direction:column;gap:24px;min-width:0">
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">Contato</div>
@@ -393,6 +473,11 @@
       </div>
     </div>
   </footer>
+
+  <div data-autoscroll="1" role="button" tabIndex="0" aria-label="Rolagem automática" style="position:fixed;left:50%;transform:translateX(-50%);bottom:clamp(16px,3vw,28px);z-index:50;opacity:0;pointer-events:none;display:flex;align-items:center;gap:10px;background:#000000;border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:11px 15px;cursor:pointer" style-hover="border-color:#ffffff">
+    <span data-as-icon="1" style="font:400 10px/1 Archivo,sans-serif;color:#ffffff">▶</span>
+    <span data-as-label="1" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#ffffff">Rolar</span>
+  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
@@ -400,21 +485,118 @@
   &quot;blueprint&quot;: {&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},
   &quot;density&quot;: {&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Confortável&quot;,&quot;Compacto&quot;],&quot;default&quot;:&quot;Confortável&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;}
 }">
+/* ATENCAO — ESTE SCRIPT NAO E O DO SITE.
+ *
+ * tools/build.mjs corta o body em <script type="text/x-dc">, entao nada daqui
+ * chega ao index.html. O comportamento publicado vive em assets/site.js, que e
+ * um port deste bloco com tres diferencas deliberadas:
+ *
+ *   - sem _snap(): scroll-snap-stop:always trava a rolagem num gesto so
+ *   - sem os listeners de scroll de _cine/_slideIn/_scrub: o _ticker ja chama
+ *     esses handlers todo frame, os listeners so refaziam o trabalho
+ *   - altura da nav em this._navH, nao getComputedStyle por frame
+ *
+ * A fonte de verdade do comportamento e assets/site.js. Reexportar o canvas por
+ * cima dele desfaz isso em silencio — conferir o diff antes.
+ */
 class Component extends DCLogic {
   state = { mobile: typeof window !== 'undefined' && window.innerWidth < 760, menu: false };
 
+  // laço de suavização: as animações perseguem o scroll com inércia
+  _ticker() {
+    this._lag = 0;
+    const step = () => {
+      const target = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (this._sy == null) this._sy = target;
+      this._sy += (target - this._sy) * 0.14;
+      if (Math.abs(target - this._sy) < 0.35) this._sy = target;
+      const lag = target - this._sy;
+      if (lag !== this._lag) {
+        this._lag = lag;
+        if (this._onCine) this._onCine();
+        if (this._onScroll) this._onScroll();
+        if (this._onSlide) this._onSlide();
+      }
+      this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  _autoScroll() {
+    const btn = document.querySelector('[data-autoscroll]');
+    if (!btn) return false;
+    const icon = btn.querySelector('[data-as-icon]'), label = btn.querySelector('[data-as-label]');
+    const el = document.scrollingElement || document.documentElement;
+    const stop = () => {
+      this._asOn = false;
+      if (this._asRaf) cancelAnimationFrame(this._asRaf);
+      this._asRaf = null;
+      if (this._asSnap != null) { el.style.scrollSnapType = this._asSnap; this._asSnap = null; }
+      if (icon) icon.textContent = '▶';
+      if (label) label.textContent = 'Rolar';
+    };
+    const step = (ts) => {
+      if (!this._asOn) return;
+      const dt = this._asTs ? Math.min(48, ts - this._asTs) : 16;
+      this._asTs = ts;
+      const max = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      const y = Math.min(max, (window.scrollY || 0) + dt * 0.075);
+      window.scrollTo(0, y);
+      if (y >= max - 1) { stop(); return; }
+      this._asRaf = requestAnimationFrame(step);
+    };
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (this._asOn) { stop(); return; }
+      this._asOn = true;
+      this._asTs = 0;
+      // o encaixe por proximidade brigaria com a rolagem contínua
+      this._asSnap = el.style.scrollSnapType || '';
+      el.style.scrollSnapType = 'none';
+      if (icon) icon.textContent = '❙❙';
+      if (label) label.textContent = 'Parar';
+      this._asRaf = requestAnimationFrame(step);
+    });
+    ['click', 'wheel', 'touchstart', 'keydown'].forEach(ev => {
+      document.addEventListener(ev, (e) => { if (this._asOn && !btn.contains(e.target)) stop(); }, { passive: true });
+    });
+    this._asStop = stop;
+    return true;
+  }
+
+  _defer(fn) {
+    let settled = false, tries = 0;
+    const run = () => {
+      if (settled) return;
+      let ok = false;
+      try { ok = fn() !== false; } catch (e) { ok = false; }
+      if (ok) { settled = true; return; }
+      if (tries++ > 14) return;
+      setTimeout(run, 60 + tries * 40);
+    };
+    requestAnimationFrame(run);
+    setTimeout(run, 0);
+  }
+
   _watchWidth() {
+    // media query: dispara na mudança real da caixa, sem depender de evento resize
+    const mq = window.matchMedia('(min-width: 760px)');
     const check = () => {
-      const m = window.innerWidth < 760;
+      const m = !mq.matches;
       if (m !== this.state.mobile) this.setState({ mobile: m, menu: false });
     };
+    this._mq = mq;
     this._onWidth = check;
-    window.addEventListener('resize', check);
+    if (mq.addEventListener) mq.addEventListener('change', check);
+    else if (mq.addListener) mq.addListener(check);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
+    // observers são o gatilho certo, mas precisam de rede quando o render é estrangulado
+    this._defer(() => { check(); return document.querySelector('nav') !== null; });
   }
 
   _measureNav() {
     const nav = document.querySelector('nav');
-    if (!nav) return;
+    if (!nav) return false;
     const hh = Math.round(nav.getBoundingClientRect().height);
     if (!hh || hh === this._navH) return;
     this._navH = hh;
@@ -424,14 +606,19 @@ class Component extends DCLogic {
   }
 
   _navHeight() {
-    const apply = () => {
-      // mede depois do render que trocou a barra, não durante o resize
-      requestAnimationFrame(() => requestAnimationFrame(() => this._measureNav()));
-    };
-    apply();
+    const apply = () => this._measureNav();
     this._onNav = apply;
-    window.addEventListener('resize', apply);
-    setTimeout(apply, 400);
+    this._defer(apply);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) apply(); });
+    if (typeof ResizeObserver !== 'undefined') {
+      this._ro = new ResizeObserver(apply);
+      this._ro.observe(document.documentElement);
+      const nav = document.querySelector('nav');
+      if (nav) this._ro.observe(nav);
+    } else {
+      window.addEventListener('resize', apply);
+    }
+    apply();
   }
 
   componentDidUpdate() { if (this._onNav) this._onNav(); }
@@ -439,11 +626,11 @@ class Component extends DCLogic {
   _snap() {
     const el = document.scrollingElement || document.documentElement;
     el.style.scrollSnapType = 'y proximity';
-    el.style.scrollBehavior = 'smooth';
   }
 
   componentDidMount() {
     this._snap();
+    this._ticker();
     this._watchWidth();
     this._navHeight();
     this._loopVideo();
@@ -453,6 +640,7 @@ class Component extends DCLogic {
     this._cine();
     this._scrub();
     this._slideIn();
+    this._defer(() => this._autoScroll());
     const OFF = { left: '-56px,0', right: '56px,0', up: '0,56px', down: '0,-56px' };
     const EASE = 'cubic-bezier(.22,.61,.36,1)';
     requestAnimationFrame(() => {
@@ -480,8 +668,9 @@ class Component extends DCLogic {
   }
 
   _heroIn() {
-    requestAnimationFrame(() => {
+    this._defer(() => {
       const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-hero-in]'));
+      if (!nodes.length) return false;
       nodes.forEach(n => {
         n.style.clipPath = 'inset(0 0 100% 0)';
         n.style.transform = 'translateY(18px)';
@@ -497,40 +686,72 @@ class Component extends DCLogic {
           n.style.opacity = '1';
         });
       }, 60);
+      return true;
     });
   }
 
   _cine() {
-    requestAnimationFrame(() => {
+    this._defer(() => {
       const sec = document.querySelector('[data-cine]');
-      if (!sec) return;
+      if (!sec) return false;
       const vid = sec.querySelector('[data-cine-video]');
       const scrim = sec.querySelector('[data-cine-scrim]');
       const blue = sec.querySelector('[data-cine-blue]');
       const copy = sec.querySelector('[data-cine-copy]');
-      const stmt = sec.querySelector('[data-cine-stmt]');
+      const stmts = Array.prototype.slice.call(sec.querySelectorAll('[data-cine-stmt]'));
       const draws = Array.prototype.slice.call(sec.querySelectorAll('svg[data-blue-plate]'));
+      const sets = Array.prototype.slice.call(sec.querySelectorAll('[data-set]'));
       const plates = Array.prototype.slice.call(sec.querySelectorAll('[data-blue-plate]'));
       draws.forEach(d => this._prep(d));
       const seg = (v, x, y) => Math.min(1, Math.max(0, (v - x) / (y - x)));
       const ease = t => 1 - Math.pow(1 - t, 3);
       let drawn = false;
       const stage = sec.querySelector('[data-cine-stage]');
+      const snaps = Array.prototype.slice.call(sec.querySelectorAll('[data-cine-snap]'));
+      const SNAP_AT = [0.44, 0.70, 0.95];
+      const asBtn = document.querySelector('[data-autoscroll]');
+      const fill = sec.querySelector('[data-cine-fill]');
+      const dots = Array.prototype.slice.call(sec.querySelectorAll('[data-cine-dot]'));
+      const railEl = sec.querySelector('[data-cine-rail]');
       const onScroll = () => {
-        const r = sec.getBoundingClientRect();
+        const rect = sec.getBoundingClientRect();
+        const r = { top: rect.top + (this._lag || 0) };
         const vh = stage ? stage.clientHeight : window.innerHeight;
         const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vb-nav')) || 0;
+        // o controle de rolagem só aparece depois que o hero sai de cena
+        if (asBtn) {
+          const show = rect.bottom < window.innerHeight * 0.6;
+          if (asBtn._show !== show) {
+            asBtn._show = show;
+            asBtn.style.transition = 'opacity .35s linear';
+            asBtn.style.opacity = show ? '1' : '0';
+            asBtn.style.pointerEvents = show ? 'auto' : 'none';
+          }
+        }
         const total = sec.offsetHeight - vh;
         const p = total > 0 ? Math.min(1, Math.max(0, (navH - r.top) / total)) : 0;
 
         const pad = Math.min(72, Math.max(32, vh * 0.06));
-        const stmtH = stmt ? stmt.offsetHeight : 0;
+        const stmtH = stmts.length ? Math.max.apply(null, stmts.map(el => el.offsetHeight)) : 0;
+        const stmtH3 = stmts.length > 2 ? stmts[2].offsetHeight : stmtH;
         // o cartão só ocupa o espaço acima do texto, com folga para as placas (±20px)
+        const bl = ease(seg(p, 0.14, 0.36));
         const vw = window.innerWidth;
         const side = vw >= 760;
-        // 60% da tela para o desenho, 40% para a mensagem
-        const designW = side ? vw * 0.6 : vw;
-        const stmtW = side ? Math.max(240, vw * 0.4 - pad * 2) : 0;
+        // rastro MEDIDO (união das placas) — quadro de referência para o texto
+        let fL = Infinity, fR = -Infinity, fT = Infinity, fB = -Infinity;
+        const sr = stage ? stage.getBoundingClientRect() : { top: 0, left: 0 };
+        plates.forEach(el => {
+          const rr = el.getBoundingClientRect();
+          if (rr.width < 2) return;
+          const l = rr.left - sr.left, rt = rr.right - sr.left, t = rr.top - sr.top, b = rr.bottom - sr.top;
+          if (l < fL) fL = l;
+          if (rt > fR) fR = rt;
+          if (t < fT) fT = t;
+          if (b > fB) fB = b;
+        });
+        // o desenho ocupa ~58% e a mensagem o que sobra, medidos pelo RASTRO
+        const designW = side ? vw * 0.58 : vw;
         const availW = designW - pad * 2;
         const availH = side ? (vh - pad * 2) : Math.max(150, vh - stmtH - pad - 40);
         // os desenhos passam 16% da moldura e a perspectiva amplia ~12% -> reserva 1.32x
@@ -538,16 +759,62 @@ class Component extends DCLogic {
         const sEnd = side
           ? Math.min(0.6, Math.min(availW / vw, availH / vh) / FOOT)
           : Math.min(0.44, (availH / vh) / FOOT);
-        const yEnd = side ? 0 : -((vh - availH) / 2) + 20;
-        const xEnd = side ? -(vw - designW) / 2 : 0;
+        if (fill) fill.style.height = (p * 100).toFixed(1) + '%';
+        snaps.forEach((el, k) => {
+          const t = Math.round(SNAP_AT[k] * total);
+          if (el._t !== t) { el._t = t; el.style.top = t + 'px'; }
+          const al = p < 0.15 ? 'none' : 'start';
+          if (el._al !== al) { el._al = al; el.style.scrollSnapAlign = al; }
+        });
+        // três estações e a direção em que os planos projetam
+        const journey = seg(p, 0.46, 0.98);
+        const raw = journey * 2;
+        const si = Math.min(1, Math.floor(raw));
+        const sf = ease(Math.min(1, (raw - si) / 0.4));
+        const stationF = si + sf;
+        const DX = [-1, 1, 0], DY = [0, 0, -1.6];
+        // a direção só vira no MEIO da travessia: o leque fica firme durante o platô
+        const dsf = ease(Math.min(1, Math.max(0, ((raw - si) - 0.16) / 0.2)));
+        const dirX = DX[si] + (DX[si + 1] - DX[si]) * dsf;
+        const dirY = DY[si] + (DY[si + 1] - DY[si]) * dsf;
+        // (0) painel à esquerda / texto à direita,
+        // (1) painel à direita / texto à esquerda, (2) painel no alto / texto embaixo
+        // o rastro (moldura + camadas + perspectiva) encosta no respiro, não na borda
+        const halfFoot = (vw * sEnd * FOOT) / 2 + 40 * Math.abs(dirX);
+        const shiftX = side ? Math.max(0, vw / 2 - pad * 1.5 - halfFoot) : 0;
+        const stmtW = side ? Math.max(240, Math.min(460, vw - 2 * halfFoot - pad * 4)) : 0;
+        // estação 3: painel + texto formam uma pilha centrada — o painel sobe
+        // apenas metade do que o texto ocupa abaixo dele
+        const GAP3 = 32;
+        const halfFootH = (vh * sEnd * FOOT) / 2 + 12 + 40 * Math.max(0, (dirY - 0.6) / 0.9);
+        // extensão do rastro medida RELATIVA ao centro do cartão (invariante à posição)
+        const cy0 = vh / 2 + (this._y2 || 0);
+        const above = isFinite(fT) ? Math.max(20, cy0 - fT) : vh * 0.28;
+        const below = isFinite(fB) ? Math.max(20, fB - cy0) : vh * 0.28;
+        const footH = above + below;
+        // margem da estação 3 cede até 8px para a pilha caber no palco
+        const pad3 = Math.max(8, (vh - footH - GAP3 - stmtH3) / 2);
+        const topFT = pad3;
+        const cardCY = topFT + above;
+        const upY = side ? Math.max(0, vh / 2 - cardCY) : 0;
+        const text3 = cardCY + below + GAP3;
+        const stack3Top = vh / 2 - (halfFootH + (GAP3 + stmtH3) / 2);
+        const text3Top = Math.max(pad, stack3Top + 2 * halfFootH + GAP3);
+        const KX = [-shiftX, shiftX, 0];
+        const KY = [0, 0, -upY];
+        const x2 = KX[si] + (KX[si + 1] - KX[si]) * sf;
+        const y2 = KY[si] + (KY[si + 1] - KY[si]) * sf;
+        this._y2 = y2;
+        const yEnd = side ? y2 : -((vh - availH) / 2) + 20;
+        const xEnd = side ? x2 : 0;
 
-        const shrink = ease(seg(p, 0.02, 0.52));
+        const shrink = ease(seg(p, 0.02, 0.26));
         const s = 1 - (1 - sEnd) * shrink;
         const y = yEnd * shrink;
         // saída lateral amarrada à dobra que chega: o cartão só limpa a tela
         // quando o topo da próxima seção encosta em zero
         const next = sec.nextElementSibling;
-        const nTop = next ? next.getBoundingClientRect().top : window.innerHeight;
+        const nTop = (next ? next.getBoundingClientRect().top : window.innerHeight) + (this._lag || 0);
         const outX = ease(1 - Math.min(1, Math.max(0, nTop / Math.max(1, window.innerHeight))));
         const x = xEnd * shrink - outX * vw * 1.08;
         const ry = -9 * shrink, rx = 2.4 * shrink;
@@ -561,74 +828,127 @@ class Component extends DCLogic {
         }
         if (scrim) scrim.style.opacity = (0.52 - 0.4 * shrink).toFixed(3);
 
-        const out = ease(seg(p, 0.0, 0.30));
+        const out = ease(seg(p, 0.0, 0.16));
         if (copy) {
           copy.style.opacity = (1 - out).toFixed(3);
           copy.style.transform = 'translateY(' + (-40 * out).toFixed(1) + 'px)';
           copy.style.filter = 'blur(' + (4 * out).toFixed(2) + 'px)';
         }
 
-        const bl = ease(seg(p, 0.30, 0.70));
         if (blue) {
           blue.style.opacity = (bl * (1 - outX * 0.85)).toFixed(3);
           blue.style.transform = 'translate(-50%,-50%) translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotateY(' + ry.toFixed(2) + 'deg) rotateX(' + rx.toFixed(2) + 'deg) scale(' + (0.82 + 0.18 * bl).toFixed(3) + ')';
         }
-        // os planos nascem dentro da imagem (z negativo) e avançam para a frente
+        // os planos nascem dentro da imagem e projetam na direção da estação
         plates.forEach(el => {
           const z = parseFloat(el.getAttribute('data-z') || '0');
-          const dx = parseFloat(el.getAttribute('data-dx') || '0');
-          const dy = parseFloat(el.getAttribute('data-dy') || '0');
+          // t: 0 no plano mais fundo, 1 no mais à frente — o desvio cresce com a
+          // profundidade sempre para o mesmo lado, então o leque aponta para o texto
+          const t = Math.max(0, Math.min(1, (z + 190) / 330));
+          const isLayer = el.tagName.toLowerCase() === 'svg';
+          const dx = isLayer ? (1 - t) * 66 * dirX : 0;
+          const dy = isLayer ? (1 - t) * 40 * dirY : 0;
           const zz = -190 + (z + 190) * bl;
           el.style.transform = 'translate3d(' + (dx * bl).toFixed(1) + 'px,' + (dy * bl).toFixed(1) + 'px,' + zz.toFixed(1) + 'px)';
         });
-        if (!drawn && p > 0.34) { drawn = true; draws.forEach((d, k) => this._play(d, k * 160)); }
-        if (drawn && p < 0.20) drawn = false;
-
-        const st = ease(seg(p, 0.62, 0.92));
-        if (stmt) {
-          stmt.style.opacity = (st * (1 - outX)).toFixed(3);
-          if (side) {
-            stmt.style.left = 'auto';
-            stmt.style.right = pad + 'px';
-            stmt.style.bottom = 'auto';
-            stmt.style.top = '50%';
-            stmt.style.width = stmtW + 'px';
-            stmt.style.padding = '0';
-            stmt.style.zIndex = '5';
-            stmt.style.alignItems = 'flex-start';
-            stmt.style.textAlign = 'left';
-            stmt.style.transform = 'translateY(-50%) translateX(' + (30 * (1 - st) - outX * vw * 0.8).toFixed(1) + 'px)';
-          } else {
-            stmt.style.left = '0';
-            stmt.style.right = '0';
-            stmt.style.bottom = pad + 'px';
-            stmt.style.top = 'auto';
-            stmt.style.width = 'auto';
-            stmt.style.padding = '0 16px';
-            stmt.style.alignItems = 'center';
-            stmt.style.textAlign = 'center';
-            stmt.style.transform = 'translate(' + (-outX * vw * 0.8).toFixed(1) + 'px,' + (26 * (1 - st)).toFixed(1) + 'px)';
+        dots.forEach((el, k) => {
+          const nk = Math.max(0, 1 - Math.abs(stationF - k) / 0.6);
+          el.style.transition = 'opacity .3s linear';
+          el.style.opacity = (0.28 + 0.72 * nk).toFixed(2);
+        });
+        // cada estação tem o seu conjunto de desenhos
+        sets.forEach(el => {
+          const k = parseFloat(el.getAttribute('data-set') || '0');
+          const near = Math.max(0, 1 - Math.abs(stationF - k) / 0.55);
+          el.style.opacity = (ease(near) * bl).toFixed(3);
+          // o traçado vem de p (sem platô), então nunca congela: cada conjunto
+          // desenha na subida da sua janela e desfaz na descida
+          // [início, completo, fim do platô, apagado] — o platô cobre a trava
+          const DW = [[0.08, 0.36, 0.50, 0.58], [0.46, 0.62, 0.74, 0.82], [0.74, 0.88, 1.02, 1.4]];
+          const w = DW[k] || DW[0];
+          let dq = 0;
+          if (p > w[0]) dq = p < w[1] ? (p - w[0]) / (w[1] - w[0]) : (p < w[2] ? 1 : 1 - (p - w[2]) / (w[3] - w[2]));
+          const draw = Math.max(0, Math.min(1, dq)) * ease(bl);
+          if (!el._geo) {
+            this._prep(el);
+            el._geo = Array.prototype.slice.call(el.querySelectorAll('path,rect,circle,line,polyline')).filter(g => g._len);
           }
-        }
+          const N = el._geo.length || 1;
+          el._geo.forEach((g, gi) => {
+            const a0 = gi / (N + 2);
+            const t = Math.max(0, Math.min(1, (draw - a0) / (1 - a0)));
+            g.style.transition = 'none';
+            g.style.strokeDashoffset = (g._len * (1 - t)).toFixed(1);
+          });
+        });
+
+        const entered = ease(seg(p, 0.20, 0.28));
+        stmts.forEach((el, k) => {
+          const near = Math.max(0, 1 - Math.abs(stationF - k) / 0.6);
+          const vis = ease(near) * (k === 0 ? entered : 1) * (1 - outX);
+          el.style.opacity = vis.toFixed(3);
+          el.style.zIndex = '5';
+          const slide = (1 - near) * 34;
+          const ex = -outX * vw * 0.8;
+          if (!side) {
+            el.style.left = '0'; el.style.right = '0';
+            el.style.top = 'auto'; el.style.bottom = pad + 'px';
+            el.style.width = 'auto'; el.style.padding = '0 16px';
+            el.style.alignItems = 'center'; el.style.textAlign = 'center';
+            el.style.transform = 'translate(' + ex.toFixed(1) + 'px,' + slide.toFixed(1) + 'px)';
+            return;
+          }
+          el.style.padding = '0';
+          el.style.maxWidth = 'none';
+          const gut = Math.min(80, Math.max(36, vw * 0.035)) + 8;
+          if (k === 0) {
+            const edge = isFinite(fR) ? fR : vw / 2 - shiftX + halfFoot;
+            const railW = railEl ? railEl.getBoundingClientRect().width + gut : 76;
+            const w = Math.max(180, Math.min(460, vw - edge - gut - pad - railW));
+            el.style.width = w + 'px';
+            el.style.left = (edge + gut).toFixed(0) + 'px'; el.style.right = 'auto';
+            el.style.top = '50%'; el.style.bottom = 'auto';
+            el.style.alignItems = 'flex-start'; el.style.textAlign = 'left';
+            el.style.transform = 'translateY(-50%) translateX(' + (slide + ex).toFixed(1) + 'px)';
+          } else if (k === 1) {
+            const edge = isFinite(fL) ? fL : vw / 2 + shiftX - halfFoot;
+            el.style.width = 'auto';
+            el.style.maxWidth = Math.max(180, Math.min(460, edge - gut - pad)) + 'px';
+            el.style.left = 'auto';
+            el.style.right = Math.max(pad, vw - (edge - gut)).toFixed(0) + 'px';
+            el.style.top = '50%'; el.style.bottom = 'auto';
+            el.style.alignItems = 'flex-start'; el.style.textAlign = 'left';
+            el.style.transform = 'translateY(-50%) translateX(' + (-slide + ex).toFixed(1) + 'px)';
+          } else {
+            el.style.width = Math.min(vw - pad * 2, 620) + 'px';
+            el.style.left = '50%'; el.style.right = 'auto';
+            const t3 = (isFinite(fB) ? fB : text3 - GAP3) + GAP3;
+            el.style.bottom = 'auto'; el.style.top = Math.max(8, Math.min(vh - stmtH3 - 8, t3)).toFixed(0) + 'px';
+            el.style.alignItems = 'center'; el.style.textAlign = 'center';
+            el.style.transform = 'translateX(-50%) translate(' + ex.toFixed(1) + 'px,' + slide.toFixed(1) + 'px)';
+          }
+        });
       };
       this._onCine = onScroll;
       this._cineTargets = [window, document, document.body, document.scrollingElement].filter((t, k, arr) => t && arr.indexOf(t) === k);
       this._cineTargets.forEach(t => t.addEventListener('scroll', onScroll, { passive: true }));
       window.addEventListener('resize', onScroll);
       onScroll();
+      return true;
     });
   }
 
   _slideIn() {
-    requestAnimationFrame(() => {
+    this._defer(() => {
       const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-slide-in]'));
-      if (!nodes.length) return;
+      if (!nodes.length) return false;
       const seg = (v, x, y) => Math.min(1, Math.max(0, (v - x) / (y - x)));
       const ease = t => 1 - Math.pow(1 - t, 3);
       const onScroll = () => {
         const vhWin = window.innerHeight;
         nodes.forEach(n => {
-          const r = n.getBoundingClientRect();
+          const rr = n.getBoundingClientRect();
+          const r = { top: rr.top + (this._lag || 0) };
           const k = ease(seg(r.top, vhWin, vhWin * 0.28));
           n.style.transform = 'translateX(' + ((1 - k) * 62).toFixed(2) + '%)';
           n.style.opacity = (0.15 + 0.85 * k).toFixed(3);
@@ -638,6 +958,7 @@ class Component extends DCLogic {
       [window, document, document.body].forEach(t => t && t.addEventListener('scroll', onScroll, { passive: true }));
       window.addEventListener('resize', onScroll);
       onScroll();
+      return true;
     });
   }
 
@@ -663,13 +984,14 @@ class Component extends DCLogic {
       if (!g._len) return;
       g.style.strokeDashoffset = g._len;
       g.style.transition = 'stroke-dashoffset .9s cubic-bezier(.22,.61,.36,1) ' + ((base || 0) + i * 90) + 'ms';
-      requestAnimationFrame(() => { g.style.strokeDashoffset = '0'; });
+      setTimeout(() => { g.style.strokeDashoffset = '0'; }, 16);
     });
   }
 
   _drawLines() {
-    requestAnimationFrame(() => {
+    this._defer(() => {
       const svgs = Array.prototype.slice.call(document.querySelectorAll('[data-draw]'));
+      if (!svgs.length) return false;
       svgs.forEach(s => this._prep(s));
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
@@ -680,18 +1002,19 @@ class Component extends DCLogic {
       }, { threshold: 0.25 });
       svgs.forEach(s => io.observe(s));
       this._io2 = io;
+      return true;
     });
   }
 
   _scrub() {
-    requestAnimationFrame(() => {
+    this._defer(() => {
       const sec = document.querySelector('[data-scrub]');
-      if (!sec) return;
+      if (!sec) return false;
       const q = (s) => Array.prototype.slice.call(sec.querySelectorAll(s));
       const words = q('[data-word]'), descs = q('[data-desc]'), figs = q('[data-fig]'), counts = q('[data-count]'), labels = q('[data-count-label]');
       const rail = sec.querySelector('[data-rail]'), step = sec.querySelector('[data-step]'), figwrap = sec.querySelector('[data-figwrap]');
       const n = words.length;
-      if (!n) return;
+      if (!n) return false;
       const EASE = 'cubic-bezier(.22,.61,.36,1)';
       const seg = (v, x, y) => Math.min(1, Math.max(0, (v - x) / (y - x)));
       const ease = t => 1 - Math.pow(1 - t, 3);
@@ -724,19 +1047,45 @@ class Component extends DCLogic {
           if (k === i) this._play(f, 40);
         });
       };
+      const icon = sec.querySelector('[data-auto-icon]'), label = sec.querySelector('[data-auto-label]');
+      const stopAuto = () => {
+        if (this._autoT) { clearInterval(this._autoT); this._autoT = null; }
+        if (icon) icon.textContent = '▶';
+        if (label) label.textContent = 'Assistir';
+      };
+      this._stopAuto = stopAuto;
+      this._toggleAuto = () => {
+        if (this._autoT) { stopAuto(); return; }
+        let i = Math.max(0, this._i);
+        this._autoY = window.scrollY || 0;
+        if (icon) icon.textContent = '❙❙';
+        if (label) label.textContent = 'Pausar';
+        this._autoT = setInterval(() => {
+          i = (i + 1) % n;
+          this._i = i;
+          set(i);
+          if (step) step.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
+          if (rail) rail.style.width = ((i / (n - 1)) * 100).toFixed(1) + '%';
+        }, 2600);
+      };
       this._i = -1;
       const stage2 = sec.querySelector('[data-scrub-stage]');
       const onScroll = () => {
-        const r = sec.getBoundingClientRect();
+        const rect = sec.getBoundingClientRect();
+        const r = { top: rect.top + (this._lag || 0) };
         const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--vb-nav')) || 0;
         const total = sec.offsetHeight - (stage2 ? stage2.clientHeight : window.innerHeight);
         const prog = total > 0 ? Math.min(1, Math.max(0, (navH - r.top) / total)) : 0;
 
         if (rail) rail.style.width = (prog * 100).toFixed(2) + '%';
         if (figwrap) figwrap.style.transform = 'translateY(' + (-26 * prog).toFixed(1) + 'px)';
-        const i = Math.min(n - 1, Math.floor(prog * n));
-        if (step) step.textContent = ('0' + (i + 1)).slice(-2) + ' / ' + ('0' + n).slice(-2);
-        if (i !== this._i) { this._i = i; set(i); }
+        // só uma rolagem de verdade (mais de 24px) interrompe o autoplay
+        if (this._autoT) {
+          if (Math.abs((window.scrollY || 0) - (this._autoY || 0)) > 24) stopAuto();
+          else return;
+        }
+        // as seis etapas são comandadas só pelo botão Assistir
+        if (this._i < 0) { this._i = 0; set(0); }
       };
       this._onScroll = onScroll;
       this._scrollTargets = [window, document, document.body, document.scrollingElement].filter((t, k, a) => t && a.indexOf(t) === k);
@@ -744,6 +1093,7 @@ class Component extends DCLogic {
       window.addEventListener('resize', onScroll);
       set(0);
       onScroll();
+      return true;
     });
   }
 
@@ -765,8 +1115,15 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
+    if (this._autoT) clearInterval(this._autoT);
+    if (this._asRaf) cancelAnimationFrame(this._asRaf);
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._ro) this._ro.disconnect();
     if (this._onNav) window.removeEventListener('resize', this._onNav);
-    if (this._onWidth) window.removeEventListener('resize', this._onWidth);
+    if (this._mq && this._onWidth) {
+      if (this._mq.removeEventListener) this._mq.removeEventListener('change', this._onWidth);
+      else if (this._mq.removeListener) this._mq.removeListener(this._onWidth);
+    }
     if (this._io) this._io.disconnect();
     if (this._io2) this._io2.disconnect();
     if (this._vt) clearTimeout(this._vt);
@@ -786,6 +1143,7 @@ class Component extends DCLogic {
       isMobile: this.state.mobile,
       isDesktop: !this.state.mobile,
       menuOpen: this.state.menu,
+      toggleAuto: () => { if (this._toggleAuto) this._toggleAuto(); },
       toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
       heroPhoto: (p.heroTreatment ?? 'Vídeo') === 'Foto',
       heroVideo: (p.heroTreatment ?? 'Vídeo') === 'Vídeo',

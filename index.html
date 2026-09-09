@@ -47,6 +47,7 @@
   .vbh-8:hover{color:#929292 !important}
   .vbh-9:hover{color:#929292 !important}
   .vbh-10:hover{color:#929292 !important}
+  .vbh-11:hover{border-color:#ffffff !important}
 </style>
 <script type="application/ld+json">
 {
@@ -78,6 +79,14 @@
 </script>
 </head>
 <body>
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000000"></rect>
+    <path d="M420 220H679.2L780 320.8V580H420Z" fill="#ffffff"></path>
+    <text x="600" y="428" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="600" font-size="150" letter-spacing="-8" fill="#000000">VB</text>
+  </svg>
+</template>
+
 <div style="--sec: 128px;background:#ffffff;min-height:100vh;overflow-x:clip">
 
   <!-- NAV -->
@@ -147,8 +156,11 @@
   </div>
 
   <!-- HERO → BANDA PRETA (transição travada) -->
-  <section id="topo" data-cine="1" style="position:relative;height:200svh;background:#000000">
+  <section id="topo" data-cine="1" style="position:relative;height:300svh;background:#000000">
 
+      <div data-cine-snap="0" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
+      <div data-cine-snap="1" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
+      <div data-cine-snap="2" aria-hidden="true" style="position:absolute;left:0;top:0;width:1px;height:1px;scroll-snap-align:none;scroll-margin-top:var(--vb-nav,80px);pointer-events:none"></div>
     <div data-cine-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;background:#000000;perspective:1400px;perspective-origin:50% 44%">
 
       <div data-cine-video="1" style="position:absolute;inset:0;overflow:hidden;border-radius:0px;transform-origin:50% 50%;will-change:transform;background:#0d0d0d">
@@ -165,23 +177,54 @@
         <div data-blue-plate="1" data-z="0" data-dx="0" data-dy="0" style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.42);border-radius:16px;will-change:transform"></div>
         <div data-blue-plate="1" data-z="70" data-dx="32" data-dy="18" style="position:absolute;inset:0;border:1px solid rgba(255,255,255,.58);border-radius:16px;will-change:transform"></div>
         <div data-blue-plate="1" data-z="140" data-dx="58" data-dy="34" style="position:absolute;inset:0;border:1.5px solid rgba(255,255,255,.8);border-radius:14px;will-change:transform"></div>
-        <svg data-blue-plate="1" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="1.4" opacity=".42" stroke-dasharray="3 8"><path d="M0 96H900M0 208H900M0 312H900M0 424H900"></path></g>
           <g stroke-width="1.4" opacity=".34" stroke-dasharray="3 8"><path d="M130 0V520M330 0V520M540 0V520M740 0V520"></path></g>
           <g stroke-width="1.6" opacity=".6"><path d="M120 96H140M130 86V106M320 208H340M330 198V218M530 312H550M540 302V322M730 424H750M740 414V434"></path></g></svg>
-        <svg data-blue-plate="1" data-z="30" data-dx="12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="30" data-dx="12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="2.2" opacity="1"><path d="M70 448C210 448 250 300 382 300C514 300 552 152 700 152"></path></g>
           <g stroke-width="1.4" opacity=".6"><path d="M70 448V492M382 300V492M700 152V492"></path><path d="M40 492H760"></path></g>
           <g stroke-width="1.8" opacity=".9"><rect x="375" y="293" width="14" height="14"></rect><rect x="693" y="145" width="14" height="14"></rect><rect x="63" y="441" width="14" height="14"></rect></g>
           <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity=".85"><text x="66" y="482">60m</text></g></svg>
-        <svg data-blue-plate="1" data-z="150" data-dx="32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;will-change:transform">
+        <svg data-blue-plate="1" data-set="0" data-z="150" data-dx="32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
           <g stroke-width="2.6" opacity="1"><path d="M520 120H722L800 198V400H520Z"></path></g>
           <text x="660" y="330" text-anchor="middle" font-family="Archivo, sans-serif" font-size="152" font-weight="600" letter-spacing="-9" fill="none" stroke="#ffffff" stroke-width="2.2" opacity=".95">VB</text>
           <g stroke-width="1.4" opacity=".55" stroke-dasharray="4 6"><path d="M520 120H210M520 400H210M800 198H900M722 120V20M800 198V20"></path></g>
           <g stroke-width="1.8" opacity=".8"><path d="M722 44H800M722 36V52M800 36V52"></path><path d="M746 120L722 144"></path></g>
-          <g stroke-width="1.8" opacity=".75"><path d="M150 260H210M180 230V290"></path><rect x="170" y="250" width="20" height="20"></rect></g>
           <g stroke-width="1.6" opacity=".7"><path d="M860 198V400M850 198H870M850 400H870"></path></g>
-          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity="1"><text x="736" y="30">45°</text><text x="150" y="240">1515</text></g></svg>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.4" opacity="1"><text x="736" y="30">45°</text></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="-100" data-dx="-34" data-dy="-20" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.6" opacity=".5"><rect x="322" y="70" width="330" height="392"></rect></g>
+          <g stroke-width="1.6" opacity=".7"><rect x="346" y="92" width="330" height="392"></rect></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="30" data-dx="-12" data-dy="8" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <rect x="370" y="114" width="330" height="392" stroke-width="2.6" opacity="1"></rect>
+          <g stroke-width="1.8" opacity=".75"><path d="M400 176H670M400 224H670M400 272H670M400 368H670M400 416H616"></path></g>
+          <rect x="386" y="304" width="298" height="44" stroke-width="3" opacity="1"></rect>
+          <g stroke-width="2" opacity=".9"><path d="M386 326H196"></path><path d="M224 306L196 326L224 346"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1.6" opacity="1"><text x="120" y="332">1515</text></g></svg>
+        <svg data-blue-plate="1" data-set="1" data-z="150" data-dx="-32" data-dy="18" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.8" opacity=".85"><path d="M370 114V70M370 506V550M700 114V70M700 506V550"></path></g>
+          <g stroke-width="2" opacity=".9"><path d="M370 60H700M370 50V70M700 50V70"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1.6" opacity="1"><text x="470" y="40">FOLHA</text></g></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="-100" data-dx="-20" data-dy="-30" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="1.8" opacity=".45"><path d="M90 90H150M90 90V150M810 430H750M810 430V370"></path></g>
+          <g stroke-width="1.4" opacity=".28" stroke-dasharray="2 8"><path d="M90 260H810"></path></g></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="30" data-dx="8" data-dy="14" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="2.2" opacity=".5" stroke-dasharray="7 9"><path d="M150 260C340 260 420 120 620 120"></path><path d="M150 260C340 260 420 400 620 400"></path></g>
+          <g stroke-width="2.4" opacity=".7"><path d="M606 106L634 134M634 106L606 134M606 386L634 414M634 386L606 414"></path></g>
+          <path d="M150 260H690" stroke-width="4" opacity="1"></path>
+          <circle cx="150" cy="260" r="13" stroke-width="3.2" opacity="1"></circle>
+          <rect x="690" y="234" width="52" height="52" stroke-width="3.2" opacity="1"></rect></svg>
+        <svg data-blue-plate="1" data-set="2" data-z="150" data-dx="18" data-dy="40" viewBox="0 0 900 520" fill="none" stroke="#ffffff" stroke-linecap="square" style="position:absolute;inset:-8%;width:116%;height:116%;opacity:0;will-change:transform">
+          <g stroke-width="2" opacity=".9"><path d="M150 330H742M150 318V342M742 318V342"></path></g>
+          <g stroke-width="1.8" opacity=".55"><path d="M150 274V330M742 288V330"></path></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.6" opacity="1"><text x="396" y="372">1 via</text></g>
+          <g fill="#ffffff" stroke="none" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.6" opacity=".6" font-size="12"><text x="656" y="96">descartada</text><text x="656" y="452">descartada</text></g></svg>
+      </div>
+
+      <div data-cine-rail="1" aria-hidden="true" style="position:absolute;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);height:min(44vh,300px);display:flex;align-items:stretch;gap:10px;z-index:4;pointer-events:none">
+        <div style="position:relative;width:1px;background:rgba(255,255,255,.22)"><div data-cine-fill="1" style="position:absolute;left:0;top:0;width:1px;height:0%;background:#ffffff"></div></div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between"><div data-cine-dot="0" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">01</span></div><div data-cine-dot="1" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">02</span></div><div data-cine-dot="2" style="display:flex;align-items:center;gap:9px;opacity:.3"><div style="width:10px;height:1px;background:#ffffff"></div><span style="font:400 9px/1 'IBM Plex Mono',monospace;letter-spacing:.4px;color:#ffffff">03</span></div></div>
       </div>
 
       <div data-cine-copy="1" style="position:absolute;inset:0;display:flex;justify-content:center;pointer-events:none">
@@ -195,7 +238,7 @@
         </div>
         <div style="width:100%;max-width:1280px;padding:clamp(72px,10vw,140px) clamp(16px,3vw,32px) clamp(40px,5vw,64px);display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(28px,4vw,48px)">
           <div data-hero-in="0" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#ffffff">OAB/RJ 206.210 · Rio de Janeiro</div>
-          <h1 data-hero-in="1" style="margin:0;max-width:22ch;font:400 clamp(34px,6.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff">Direito tributário para empresas e direito militar para quem serve.</h1>
+          <h1 data-hero-in="1" style="margin:0;max-width:min(22ch,58%);font:400 clamp(34px,6.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff">Direito tributário para empresas e direito militar para quem serve.</h1>
           <div data-hero-in="2" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
             <p style="margin:0;max-width:46ch;font:400 clamp(16px,1.6vw,20px)/1.5 Archivo,sans-serif;letter-spacing:-.2px;color:rgba(255,255,255,.82)">Apuração documental, tese fechada e providência única. Sem promessa de resultado, sem volume de processo.</p>
             <div style="display:flex;align-items:center;gap:16px;flex:none"><span style="font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:#ffffff">Rolar para explorar</span><div style="width:40px;height:40px;flex:none;border:1px solid #ffffff;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden"><span style="font:400 16px/1 Archivo,sans-serif;color:#ffffff;animation:vbBob 2.4s ease-in-out infinite">↓</span></div></div>
@@ -203,27 +246,37 @@
         </div>
       </div>
 
-      <div data-cine-stmt="1" style="position:absolute;left:0;right:0;bottom:clamp(32px,6vh,72px);padding:0 clamp(16px,3vw,32px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;opacity:0;pointer-events:none">
-        <h2 style="margin:0;max-width:26ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Duas especialidades, um mesmo método.</h2>
-        <p style="margin:0;max-width:60ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Tributário e militar se encontram no mesmo ponto: uma verba paga, uma norma que a classifica e um desconto que não deveria existir. O trabalho começa na leitura do documento.</p>
+      <div data-cine-stmt="0" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Duas especialidades, um mesmo método.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Tributário e militar se encontram no mesmo ponto: uma verba paga, uma norma que a classifica e um desconto que não deveria existir.</p>
+      </div>
+
+      <div data-cine-stmt="1" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">A prova está no papel.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Contracheque, guia e ficha funcional dizem o que foi pago e sob qual rubrica. É daí que sai a tese — nunca o contrário.</p>
+      </div>
+
+      <div data-cine-stmt="2" style="position:absolute;display:flex;flex-direction:column;gap:16px;opacity:0;pointer-events:none;will-change:transform,opacity">
+        <h2 style="margin:0;max-width:24ch;font:500 clamp(20px,2.6vw,24px)/1.4 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Uma via, a mais curta.</h2>
+        <p style="margin:0;max-width:46ch;font:400 16px/1.5 Archivo,sans-serif;color:rgba(255,255,255,.7)">Apuração fechada, valor corrigido e uma única providência. Sem promessa de resultado, sem volume de processo.</p>
       </div>
 
     </div>
   </section>
 
   <!-- ATUAÇÃO -->
-  <section id="atuacao" style="background:#ffffff;padding:clamp(40px,7vh,84px) clamp(16px,3vw,32px);overflow:clip">
-    <div data-slide-in="1" style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(20px,3vh,30px);will-change:transform">
+  <section id="atuacao" style="background:#ffffff;padding:clamp(48px,8vh,112px) clamp(16px,3vw,32px) calc(clamp(48px,8vh,112px) + 176px);overflow:clip;min-height:calc(100svh + 176px);display:flex;align-items:center">
+    <div data-slide-in="1" style="width:100%;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,4vh,48px);will-change:transform">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
         <div data-reveal="left" style="display:flex;flex-direction:column;gap:16px">
           <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">Atuação</div>
-          <h2 style="margin:0;max-width:20ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#000000">Três frentes, nenhuma genérica</h2>
+          <h2 style="margin:0;max-width:28ch;font:400 clamp(26px,3.6vw,40px)/1.2 Archivo,sans-serif;letter-spacing:-.4px;color:#000000">Três frentes, nenhuma genérica</h2>
         </div>
         <div style="display:flex;align-items:center;gap:16px;flex:none"><span style="font:400 13px/1 'IBM Plex Mono',monospace;letter-spacing:-.01em;color:#000000">Rolar para explorar</span><div style="width:40px;height:40px;flex:none;border:1px solid #000000;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden"><span style="font:400 16px/1 Archivo,sans-serif;color:#000000;animation:vbBob 2.4s ease-in-out infinite">↓</span></div></div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <div data-reveal="left" style="background:#a8927c;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div data-reveal="left" style="background:#a8927c;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#000000">01 — Empresas e PMEs</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#000000">Tributário</h3>
@@ -239,7 +292,7 @@
           </div>
         </div>
 
-        <div data-reveal="right" style="background:#193a29;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+        <div data-reveal="right" style="background:#193a29;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.8)">02 — Quem serve</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#ffffff">Militar</h3>
@@ -255,7 +308,7 @@
           </div>
         </div>
 
-        <div data-reveal="left" style="background:#839cb2;border-radius:24px;padding:clamp(20px,2.6vh,34px) clamp(22px,3.4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
+        <div data-reveal="left" style="background:#839cb2;border-radius:24px;padding:clamp(22px,3.2vh,44px) clamp(24px,3.4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(16px,2.4vw,36px);align-items:start">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#000000">03 — Regime próprio e RGPS</div>
             <h3 style="margin:0;font:400 clamp(22px,2.8vw,28px)/1.1 Archivo,sans-serif;letter-spacing:-.28px;color:#000000">Previdenciário</h3>
@@ -274,22 +327,50 @@
   </section>
 
 
-  <!-- VOCABULÁRIO (sticky) -->
-  <section data-scrub="1" style="scroll-margin-top:var(--vb-nav,80px);position:relative;background:#000000;height:200svh">
-<div aria-hidden="true" style="position:absolute;left:0;top:16.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:33.33%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:50.00%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:66.67%;width:1px;height:1px;pointer-events:none"></div><div aria-hidden="true" style="position:absolute;left:0;top:83.33%;width:1px;height:1px;pointer-events:none"></div>
-    <div data-scrub-stage="1" style="position:sticky;top:var(--vb-nav,80px);height:calc(100svh - var(--vb-nav,80px));overflow:hidden;display:flex;align-items:center">
-      <div aria-hidden="true" style="position:absolute;right:clamp(16px,3vw,32px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:4"><div style="display:flex;align-items:center;gap:10px"><span data-count-label="0" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">01</span><div data-count="0" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="1" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">02</span><div data-count="1" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="2" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">03</span><div data-count="2" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="3" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">04</span><div data-count="3" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="4" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">05</span><div data-count="4" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div><div style="display:flex;align-items:center;gap:10px"><span data-count-label="5" style="font:400 10px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.5)">06</span><div data-count="5" style="width:2px;height:34px;background:#ffffff;transform-origin:center"></div></div></div>
-      <div style="position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.16)"><div data-rail="1" style="height:1px;width:0%;background:#ffffff"></div></div>
-      <div style="width:100%;max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,5vw,72px);align-items:center">
-        <div style="display:flex;flex-direction:column;gap:clamp(20px,3vw,32px);min-width:0">
-          <div style="display:flex;align-items:center;gap:16px">
-            <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Vocabulário</div>
-            <div data-step="1" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:#ffffff">01 / 06</div>
-          </div>
-          <div style="position:relative;height:1.15em;font:400 clamp(30px,5.4vw,64px)/1.05 Archivo,sans-serif;letter-spacing:-.64px;color:#ffffff"><span data-word="0" style="position:absolute;left:0;top:0;white-space:nowrap">Contracheque</span><span data-word="1" style="position:absolute;left:0;top:0;white-space:nowrap">Rubrica</span><span data-word="2" style="position:absolute;left:0;top:0;white-space:nowrap">Verba indenizatória</span><span data-word="3" style="position:absolute;left:0;top:0;white-space:nowrap">Indébito</span><span data-word="4" style="position:absolute;left:0;top:0;white-space:nowrap">Correção</span><span data-word="5" style="position:absolute;left:0;top:0;white-space:nowrap">Restituição</span></div>
-          <div style="position:relative;min-height:7.5em;font:400 clamp(15px,1.6vw,20px)/1.5 Archivo,sans-serif;letter-spacing:-.2px;color:rgba(255,255,255,.72)"><span data-desc="0" style="position:absolute;left:0;top:0;max-width:44ch">Tudo começa aqui: a folha diz o que foi pago, sob qual rubrica e quanto o Estado retirou.</span><span data-desc="1" style="position:absolute;left:0;top:0;max-width:44ch">Cada linha tem um código. É o código — não o nome — que define a natureza da parcela.</span><span data-desc="2" style="position:absolute;left:0;top:0;max-width:44ch">Recompõe um gasto ou um risco; não acresce patrimônio. Por isso não é base de imposto.</span><span data-desc="3" style="position:absolute;left:0;top:0;max-width:44ch">O que foi recolhido sem base legal. Cinco anos para trás, contados do pedido.</span><span data-desc="4" style="position:absolute;left:0;top:0;max-width:44ch">Entre o desconto indevido e a devolução corre tempo — e o valor é atualizado pelos índices oficiais.</span><span data-desc="5" style="position:absolute;left:0;top:0;max-width:44ch">O caminho de volta: apurado, corrigido e pedido uma única vez, pela via mais curta.</span></div>
+  <!-- VOCABULÁRIO -->
+  <section style="position:relative;z-index:3;margin-top:-160px;background:#000000;padding:clamp(56px,9vh,116px) clamp(16px,3vw,32px) clamp(48px,8vh,100px)">
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3.4vw,44px)">
+      <div data-reveal="left" style="display:flex;flex-direction:column;gap:16px">
+        <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Vocabulário</div>
+        <h2 style="margin:0;max-width:26ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#ffffff">Seis termos que decidem o caso</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,max(260px,30%)),1fr));gap:1px;background:rgba(255,255,255,.14)">
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">01</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="0" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><rect x="70" y="30" width="230" height="200"></rect><rect x="86" y="46" width="230" height="200"></rect></g><rect x="102" y="62" width="230" height="200" stroke-width="1"></rect><g stroke-width="1" opacity=".55"><path d="M120 96H314M120 124H314M120 152H314M120 180H260"></path></g><path d="M120 208H206" stroke-width="1.6"></path></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Contracheque</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Tudo começa aqui: a folha diz o que foi pago, sob qual rubrica e quanto o Estado retirou.</p>
         </div>
-        <div data-figwrap="1" style="position:relative;width:100%;aspect-ratio:4/3;max-height:36svh;margin:0 auto;min-width:0;will-change:transform"><svg data-fig="0" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><rect x="70" y="30" width="230" height="200"></rect><rect x="86" y="46" width="230" height="200"></rect></g><rect x="102" y="62" width="230" height="200" stroke-width="1"></rect><g stroke-width="1" opacity=".55"><path d="M120 96H314M120 124H314M120 152H314M120 180H260"></path></g><path d="M120 208H206" stroke-width="1.6"></path></svg><svg data-fig="1" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 60H340M60 105H340M60 150H340M60 195H340M60 240H340"></path><path d="M60 60V240M130 60V240M200 60V240M270 60V240M340 60V240"></path></g><rect x="60" y="150" width="280" height="45" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M348 150V195M344 150H352M344 195H352"></path></g></svg><svg data-fig="2" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="46" y="90" width="140" height="120" stroke-width="1.6"></rect><rect x="214" y="90" width="140" height="120" stroke-width="1" stroke-dasharray="6 6" opacity=".5"></rect><g stroke-width="1" opacity=".5"><path d="M186 150H214"></path></g><path d="M46 240H186" stroke-width="1"></path></svg><svg data-fig="3" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><path d="M40 120V180M60 120V180M80 120V180M100 120V180M120 120V180M140 120V180M160 120V180M180 120V180M200 120V180M220 120V180M240 120V180M260 120V180M280 120V180M300 120V180M320 120V180M340 120V180M360 120V180"></path></g><rect x="40" y="120" width="200" height="60" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M40 200H240M40 194V206M240 194V206"></path></g></svg><svg data-fig="4" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 240H340"></path><path d="M60 60V240"></path></g><path d="M60 220L130 200L200 165L270 115L340 70" stroke-width="1.6"></path><g stroke-width="1" opacity=".45"><path d="M130 240V200M200 240V165M270 240V115"></path></g></svg><svg data-fig="5" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="250" y="118" width="64" height="64" stroke-width="1.6"></rect><path d="M86 150H250" stroke-width="1.6"></path><path d="M110 126L86 150L110 174" stroke-width="1.6"></path><g stroke-width="1" opacity=".4"><circle cx="314" cy="150" r="3"></circle><path d="M86 210H314"></path></g></svg></div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">02</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="1" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 60H340M60 105H340M60 150H340M60 195H340M60 240H340"></path><path d="M60 60V240M130 60V240M200 60V240M270 60V240M340 60V240"></path></g><rect x="60" y="150" width="280" height="45" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M348 150V195M344 150H352M344 195H352"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Rubrica</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Cada linha tem um código. É o código — não o nome — que define a natureza da parcela.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">03</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="2" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="46" y="90" width="140" height="120" stroke-width="1.6"></rect><rect x="214" y="90" width="140" height="120" stroke-width="1" stroke-dasharray="6 6" opacity=".5"></rect><g stroke-width="1" opacity=".5"><path d="M186 150H214"></path></g><path d="M46 240H186" stroke-width="1"></path></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Verba indenizatória</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Recompõe um gasto ou um risco; não acresce patrimônio. Por isso não é base de imposto.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">04</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="3" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".35"><path d="M40 120V180M60 120V180M80 120V180M100 120V180M120 120V180M140 120V180M160 120V180M180 120V180M200 120V180M220 120V180M240 120V180M260 120V180M280 120V180M300 120V180M320 120V180M340 120V180M360 120V180"></path></g><rect x="40" y="120" width="200" height="60" stroke-width="1.6"></rect><g stroke-width="1" opacity=".5"><path d="M40 200H240M40 194V206M240 194V206"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Indébito</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">O que foi recolhido sem base legal. Cinco anos para trás, contados do pedido.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">05</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="4" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><g stroke-width="1" opacity=".3"><path d="M60 240H340"></path><path d="M60 60V240"></path></g><path d="M60 220L130 200L200 165L270 115L340 70" stroke-width="1.6"></path><g stroke-width="1" opacity=".45"><path d="M130 240V200M200 240V165M270 240V115"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Correção</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">Entre o desconto indevido e a devolução corre tempo — e o valor é atualizado pelos índices oficiais.</p>
+        </div>
+        <div style="background:#000000;padding:clamp(20px,2.2vw,30px);display:flex;flex-direction:column;gap:16px">
+          <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;color:rgba(255,255,255,.55)">06</div>
+          <div style="position:relative;width:100%;aspect-ratio:4/3;max-height:132px;margin:2px 0 4px"><svg data-draw="1" data-fig="5" viewBox="0 0 400 300" fill="none" stroke-linecap="square" stroke="#ffffff" style="position:absolute;inset:0;width:100%;height:100%"><rect x="250" y="118" width="64" height="64" stroke-width="1.6"></rect><path d="M86 150H250" stroke-width="1.6"></path><path d="M110 126L86 150L110 174" stroke-width="1.6"></path><g stroke-width="1" opacity=".4"><circle cx="314" cy="150" r="3"></circle><path d="M86 210H314"></path></g></svg></div>
+          <h3 style="margin:0;font:400 clamp(19px,2vw,24px)/1.2 Archivo,sans-serif;letter-spacing:-.24px;color:#ffffff">Restituição</h3>
+          <p style="margin:0;font:400 15px/1.55 Archivo,sans-serif;letter-spacing:-.15px;color:rgba(255,255,255,.7)">O caminho de volta: apurado, corrigido e pedido uma única vez, pela via mais curta.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -353,7 +434,7 @@
 
 
   <!-- GLOSSÁRIO (marquee) -->
-  <section style="scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
+  <section style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#000000;padding:var(--sec,128px) 0;overflow:hidden">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,32px);display:flex;flex-direction:column;gap:16px">
       <div data-reveal="left" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:rgba(255,255,255,.6)">Glossário</div>
       <h2 data-reveal="left" data-reveal-delay="80" style="margin:0 0 clamp(24px,4vw,48px);max-width:24ch;font:400 clamp(28px,4vw,40px)/1.25 Archivo,sans-serif;letter-spacing:-.4px;color:#ffffff">O que os termos querem dizer</h2>
@@ -364,7 +445,7 @@
   </section>
 
   <!-- ESCRITÓRIO -->
-  <section id="escritorio" style="scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="escritorio" style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#ffffff;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,4vw,64px);align-items:center">
       <div data-reveal="left" style="border-radius:16px;overflow:hidden;background:#e5e5e5;aspect-ratio:1066/1600;height:min(78svh,610px);width:auto;max-width:100%;justify-self:start;min-width:0">
         <img src="/assets/victor.jpg" alt="Victor Boechat, advogado — OAB/RJ 206.210" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 45.3%;display:block">
@@ -383,7 +464,7 @@
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" style="scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
+  <section id="contato" style="scroll-snap-align:start;scroll-margin-top:var(--vb-nav,80px);background:#eaeaea;padding:var(--sec,128px) clamp(16px,3vw,32px)">
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,4vw,64px);align-items:end">
       <div data-reveal="left" style="display:flex;flex-direction:column;gap:24px;min-width:0">
         <div style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#575757">Contato</div>
@@ -442,6 +523,11 @@
       </div>
     </div>
   </footer>
+
+  <div data-autoscroll="1" role="button" tabindex="0" aria-label="Rolagem automática" style="position:fixed;left:50%;transform:translateX(-50%);bottom:clamp(16px,3vw,28px);z-index:50;opacity:0;pointer-events:none;display:flex;align-items:center;gap:10px;background:#000000;border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:11px 15px;cursor:pointer" class="vbh-11">
+    <span data-as-icon="1" style="font:400 10px/1 Archivo,sans-serif;color:#ffffff">▶</span>
+    <span data-as-label="1" style="font:400 11px/1 'IBM Plex Mono',monospace;letter-spacing:.55px;text-transform:uppercase;color:#ffffff">Rolar</span>
+  </div>
 </div>
 <script src="/assets/site.js" defer></script>
 </body>
